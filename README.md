@@ -74,6 +74,22 @@ Pour le Mastermind :
 
 ### Version 0.1
 * Ajout des annotations pour la Javadoc
+* Ajout du menu
+* Ajout du menu de configuration de sauvegarde
+* Ajout de la sauvegarde de la configuration
+* Ajout du mode de jeu
+* Ajout du choix du jeu
+* Ajout de la modification des paramètres de jeu
+
+### Version 0.2
+* Refonte de la structure du programme
+* Rajout du plan UML du programme
+* TODO : Finir la javadoc
+* TODO : Gestion des exceptions
+* TODO : Implentation de l'IA pour la recherche du Chiffre Secret
+* TODO : Implementation de log4j
+* TODO : Ajout de la prise en compte des arguments en ligne de commande
+* BUG : Egalite entre configuration.getJeu() et 'M' ou 'R'
 
 
 
