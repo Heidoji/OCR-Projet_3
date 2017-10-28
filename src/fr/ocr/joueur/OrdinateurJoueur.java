@@ -1,6 +1,5 @@
 package fr.ocr.joueur;
 
-import java.util.Random;
 import java.util.Scanner;
 
 import fr.ocr.configuration.Configuration;
@@ -28,8 +27,19 @@ public class OrdinateurJoueur implements Joueur {
 	
 	//Autres Méthodes
 	public int choisirChiffreSecret() {
-		Random rand = new Random();
-		this.setChiffreSecret(rand.nextInt((int) Math.pow(10, configuration.getChiffre())));
+		int nombre = 0; 
+		int couleur = configuration.getCouleur();
+		if (configuration.getJeu() == 'R') {
+			couleur = 10;
+		}
+		
+		do {
+			for (int i = 0; i < configuration.getChiffre(); i++) {
+				nombre = nombre * 10 + (int) (Math.random() * couleur);
+			}
+		} while (false);
+			
+		this.setChiffreSecret(nombre);
 		return this.getChiffreSecret();
 	}
 	

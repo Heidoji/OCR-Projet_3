@@ -37,11 +37,11 @@ public class MastermindComparer implements Comparer {
 			}
 		}
 		
-		if (present > 0)
-			str += present + " présent" + (present > 1 ? "s" : "") + (bienPlace > 0 ? ", " : "");
+		if (present-bienPlace > 0)
+			str += (present-bienPlace) + " présent" + (present > 1 ? "s" : "") + (bienPlace > 0 ? ", " : "");
 		
 		if (bienPlace > 0)
-			str += (bienPlace - present) + " bien placé" + (bienPlace > 1 ? "s" : "");
+			str += bienPlace + " bien placé" + (bienPlace > 1 ? "s" : "");
 		
 		if ((present + bienPlace) == 0)
 			str += "Aucun chiffre correct";

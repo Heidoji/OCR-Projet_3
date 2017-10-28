@@ -149,5 +149,7 @@ public class JeuMenu implements Menu {
 				   break; 
 		case 'U' : this.configuration.setMode('U');
 		}
+		
+		System.out.println("Configuration du jeu : " + configuration.getMode());
 	}
 }

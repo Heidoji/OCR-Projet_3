@@ -91,6 +91,15 @@ Pour le Mastermind :
 * TODO : Ajout de la prise en compte des arguments en ligne de commande
 * BUG : Egalite entre configuration.getJeu() et 'M' ou 'R'
 
+### Version 0.3
+* DONE : Prise en compte de l'argument configuration.couleur et configuration.chiffre pour la generation automatique du chiffre secret
+* DONE : Mise en place d'un texte explicatif avant l'input du chiffre joueur
+* DONE : Checking du nommbre rentre par le joueur en conformite avec configuration.couleur et configuration.chiffre
+* DONE : Refactoring de l'affichage des textes 
+* DEBUG : Egalite entre configuration.getJeu() et 'M' ou 'R'
+* DEBUG : Initialisation de la configuration au demarage pour le changement de mode
+
+
 
 
 ---

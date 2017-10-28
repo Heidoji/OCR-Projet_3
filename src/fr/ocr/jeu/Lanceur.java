@@ -44,25 +44,10 @@ public class Lanceur {
 		else {
 			this.configuration = new Configuration('R', 'C', 4, 10, 4, false);
 		}
-
-		switch (configuration.getMode()) {
-			case 'U' : this.mode = new DuelMode();
-			           break;
-			case 'C' : this.mode = new ChallengeMode();
-					   break;
-			case 'D' : this.mode = new DefenseMode();
-		}
 	}
 	
 	public Lanceur(char cJeu, char cMode, int cEssai, int cCouleur, int cChiffre, boolean cModDev) {
 		this.configuration = new Configuration(cJeu, cMode, cEssai, cCouleur, cChiffre, cModDev);
-		switch (cMode) {
-			case 'U' : this.mode = new DuelMode();
-					   break;
-			case 'C' : this.mode = new ChallengeMode();
-					   break;
-			case 'D' : this.mode = new DefenseMode();
-		}
 	}
 	
 	public void lancerJeu() {
@@ -91,7 +76,19 @@ public class Lanceur {
 	}
 	
 	public void initialiserJeu() {
+		this.configuration = new Configuration();
+		this.setMode(configuration.getMode());
 		this.mode.jeu.setNbEssai(0);
 		this.mode.jeu.setGagne(false);
+	}
+	
+	public void setMode(char cMode) {
+		switch (cMode) {
+		case 'C' : this.mode = new ChallengeMode();
+				   break;
+		case 'U' : this.mode = new DuelMode();
+				   break;
+		case 'D' : this.mode = new DefenseMode();
+		}
 	}
 }

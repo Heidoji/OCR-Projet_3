@@ -71,12 +71,12 @@ public abstract class Mode {
 	public void sequenceJeu() {
 		this.player1.choisirChiffreSecret();
 		
-		if (this.getModDev()) {
+		//if (this.getModDev()) {
 			this.commentDev();
-		}
+		//}
 		
 		while (!(this.jeu.getGagne(this.player2.getChiffreJoueur(), this.player1.getChiffreSecret()) 
-				|| jeu.getNbEssai() > essai)) {
+				|| this.jeu.getNbEssai() >= this.essai)) {
 			this.jeu.setNbEssai();
 			this.jeu.getComparer(this.player2.trouverChiffreSecret(), this.player1.getChiffreSecret());
 		}
@@ -97,6 +97,10 @@ public abstract class Mode {
 		System.out.println("-----------------------");
 		System.out.println("");
 		System.out.println("Le chiffre secret est " + this.player1.getChiffreSecret());
+		System.out.println("Le chiffre secret est " + this.player2.getChiffreSecret());
+		System.out.println("");
+		System.out.println("Le chiffre joueur est " + this.player1.getChiffreJoueur());
+		System.out.println("Le chiffre joueur est " + this.player2.getChiffreJoueur());
 		System.out.println("");
 	}
 }
