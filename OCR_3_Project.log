@@ -1,0 +1,10 @@
+2017-10-31 09:59:39.338 [main] INFO  fr.ocr.main.Main - Entering application
+2017-10-31 09:59:39.341 [main] INFO  fr.ocr.jeu.Lanceur - Entering Constructeur Lanceur
+2017-10-31 09:59:39.344 [main] INFO  fr.ocr.jeu.Lanceur - File config.properties exists
+2017-10-31 09:59:39.345 [main] INFO  fr.ocr.configuration.Configuration - Entering Constructeur Empty Configuration
+2017-10-31 09:59:39.345 [main] INFO  fr.ocr.configuration.Configuration - Saved File Read
+2017-10-31 09:59:39.346 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans la class lancerJeu
+2017-10-31 09:59:39.346 [main] INFO  fr.ocr.configuration.Configuration - Entering Constructeur Empty Configuration
+2017-10-31 09:59:39.346 [main] INFO  fr.ocr.configuration.Configuration - Saved File Read
+2017-10-31 09:59:39.346 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
+2017-10-31 09:59:39.347 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu

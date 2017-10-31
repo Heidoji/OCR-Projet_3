@@ -1,5 +1,8 @@
 package fr.ocr.menu;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 /**
@@ -16,9 +19,16 @@ import java.util.Scanner;
  *
  * @author Heidoji
  * @since 0.2
- * @version 0.2
+ * @version 0.4
  */
 public class FinMenu implements Menu {
+	/**
+	 * <b>Cet variable initialise le logger de log4j2</b>
+	 *
+	 * @ since 0.4
+	 */
+	private static final Logger logger = LogManager.getLogger(FinMenu.class);
+	
 	/**
 	 * Ce char représente le choix de l'utilisateur. 
 	 * 
@@ -46,7 +56,7 @@ public class FinMenu implements Menu {
 	 * <b>Mutateur du char choix de la classe FinMenu</b>
 	 * 
 	 * @param
-	 * 	char passé en argument pour changer la valeur de choix
+	 * 		char passé en argument pour changer la valeur de choix
 	 *
 	 * @since 0.2
 	 */
@@ -62,6 +72,8 @@ public class FinMenu implements Menu {
 	 * @since 0.2
 	 */
 	public void afficherMenu() {
+		logger.info("Entre dans choisirMenu de fin de partie");
+		
 		System.out.println("                                                          ");
 		System.out.println(" *********************************************************");
 		System.out.println(" *                                                       *");
@@ -93,8 +105,12 @@ public class FinMenu implements Menu {
 	 * @since 0.2
 	 */
 	public void choisirMenu() {
+		logger.info("Entre dans choisirMenu de fin de partie");
+		
 		Scanner sc = new Scanner(System.in);
 		this.setChoix(sc.nextLine().charAt(0));
+		
+		logger.debug("Configuration du jeu choisi dans le menu de fin de partie : " + this.getChoix());
 	}
 }
 

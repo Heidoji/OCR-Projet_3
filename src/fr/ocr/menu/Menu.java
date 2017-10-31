@@ -16,7 +16,7 @@ import fr.ocr.configuration.Configuration;
  *
  * @author Heidoji
  * @since 0.2
- * @version 0.2
+ * @version 0.4
  */
 public interface Menu {
 	/**

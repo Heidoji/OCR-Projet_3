@@ -99,7 +99,13 @@ Pour le Mastermind :
 * DEBUG : Egalite entre configuration.getJeu() et 'M' ou 'R'
 * DEBUG : Initialisation de la configuration au demarage pour le changement de mode
 
-
+### Version 0.4
+* DONE : Retirer getChiffre() de la Class Mode
+* DONE : Retirer setChiffre() de la Class Mode
+* DONE : Retirer getCouleur() de la Class Mode
+* DONE : Retirer setCouleur() de la Class Mode
+* DONE : Javadoc fait pour les packages Menu, Mode et Joueur
+* DONE : Mise en place de log4j2 pour Main, Configuration, Menu, Mode et Joueur
 
 
 ---

@@ -1,14 +1,14 @@
-package fr.ocr.menu;
+package fr.ocr.affichage;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import java.util.Scanner;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import fr.ocr.configuration.Configuration;
+import fr.ocr.configuration.*;
 
 /**
- * <b>La classe JeuMenu s'occupe d'afficher et de gérer le menu principal du jeu</b>
- * 
+ * <b>Menu est la classe générant et affichant le menu du jeu</b>
  * <p>
  * De plus, il permet de mettre à jour la configuration du jeu à travers la 
  * Class Configuration
@@ -20,85 +20,69 @@ import fr.ocr.configuration.Configuration;
  * <li>de quitter le programme</li>
  * </ul>
  * </p>
+ * <p>
+ * A la fin d'une partie, il est possible de :
+ * <ul>
+ * <li>de rejouer</li>
+ * <li>de revenir au menu pricipal</li>
+ * <li>de quitter le programme</li>
+ * </ul>
+ * </p>
  * 
- * @see Configuration#Configuration()
- * @see Configuration#getJeu()
- * @see Configuration#getMode()
- * @see Configuration#setJeu(String)
- * @see Configuration#setMode(String) 
- * @see JeuMenu#choix
- *
+ * @see Choix
+ * @see Configuration
+ * 
  * @author Heidoji
- * @since 0.2
- * @version 0.4
+ * @version 0.1
  */
-public class JeuMenu implements Menu {
-	/**
-	 * <b>Cet variable initialise le logger de log4j2</b>
-	 *
-	 * @ since 0.4
-	 */
-	private static final Logger logger = LogManager.getLogger(JeuMenu.class);
-	
-	/**
-	 * Ce char représente le choix de l'utilisateur. 
-	 * 
-	 * @see JeuMenu#getChoix()
-	 * @see JeuMenu#setChoix(char)
-	 * @see JeuMenu#choisirMenu()
-	 * @since 0.2
-	 */
-	private char choix;
+public class Menu {
 	
 	/**
 	 * Cet objet représente la configuration du jeu. 
 	 * 
 	 * @see Configuration
+	 * @see Menu#Menu()
+	 * @see Menu#lanceur(String)
 	 *
-	 * @since 0.2
+	 * @since 0.1
 	 */
-	private Configuration configuration = new Configuration();
-
-	//Assesseur
+	private Configuration configuration;
 	
 	/**
-	 * <b>Assesseur du char choix de la classe JeuMenu</b>
-	 * 
-	 * @since 0.2
-	 */
-	public char getChoix() {
-		return this.choix;
-	}
-	
-	//Mutateur
-	
-	/**
-	 * <b>Mutateur du char choix de la classe JeuMenu</b>
-	 * 
-	 * @param
-	 * 	char passé en argument pour changer la valeur de choix
-	 *
-	 * @since 0.2
-	 */
-	public void setChoix(char pChoix) {
-		this.choix = pChoix;
-	}
-	
-	//Autres méthodes
-	
-	/**
-	 * <b>Affiche le menu sur l'écran.</b>
+	 * Constructeur vide Menu
 	 * <p>
-	 * Affiche également les préfèrences prédéfinie
+	 * Instancie un Menu chargeant les préférences de configuration sauvegardées
+	 * ou en créant un nouveau fichier.
 	 * </p>
+	 * 
+	 * @see Configuration
 	 *
-	 * @see Configuration#getJeu()
-	 * @see Configuration#getMode() 
-	 *
-	 * @since 0.2
+	 * @since 0.1
 	 */
-	public void afficherMenu() {
-		logger.info("Entre dans l'afficherMenu du jeu");
+	public Menu() {
+		Path source = Paths.get("config.properties");
+		if (Files.exists(source)) {
+			this.configuration = new Configuration();
+		}
+		else {
+			this.configuration = new Configuration('R', 'C', 4, 10, 4);
+		}
+	}
+	
+	//Autre méthodes
+	
+	/**
+	 * Affiche le menu sur l'écran.
+	 * <b>
+	 * Affiche également les préfèrences prédéfinie
+	 * </b>
+	 *
+	 * @since 0.1
+	 */
+	public void affichageMenu() {
+		
+		Scanner sc = new Scanner(System.in);
+		String choix;
 		
 		System.out.println(" *********************************************************");
 		System.out.println(" *                                                       *");
@@ -131,38 +115,59 @@ public class JeuMenu implements Menu {
 		System.out.println("L-  Lancer la partie                 ");
 		System.out.println("                                     ");
 		System.out.print("    Votre choix : ");
+		choix = sc.nextLine();
+
+		try {
+			this.lanceur(Choix.valueOf(choix));
+		} catch (IllegalArgumentException e) {
+			System.out.println("");
+			System.out.println("Valeur non présente dans le menu : " + e.getMessage());
+			System.out.println("");
+			this.affichageMenu();
+		}
 	}
 	
 	/**
-	 * <b>Demande le choix de l'utilisateur et l'enregistre</b>
-	 * <p>
-	 * Le choix est enregistré dans le char choix
-	 * </p>
+	 * Gere le choix du joueur a travers le menu
+	 * <b>
+	 * Permet la sélection du jeu et du mode de jeu, l'accès au mode de configuration
+	 * Permet aussi de quitter l'application ou de lancer la partie
+	 * </b>
 	 * 
-	 * @see JeuMenu#choix
+	 * @param pChoix
+	 * 		Le choix venant du joueur à travers le menu
+	 * 
+	 * @see Menu#affichageMenu()
 	 * @see Configuration#setJeu(String)
 	 * @see Configuration#setMode(String)
 	 *
-	 * @since 0.2
+	 * @since 0.1
 	 */
-	public void choisirMenu() {
-		logger.info("Entre dans choisirMenu du jeu");
-		Scanner sc = new Scanner(System.in);
-		System.out.print("");
-		this.setChoix(sc.nextLine().charAt(0));
+	private void lanceur(Choix pChoix) {
 		
-		switch (this.choix) {
-		case 'R' : this.configuration.setJeu('R');
-				   break; 
-		case 'M' : this.configuration.setJeu('M');
-				   break; 
-		case 'C' : this.configuration.setMode('C');
-				   break; 
-		case 'D' : this.configuration.setMode('D');
-				   break; 
-		case 'U' : this.configuration.setMode('U');
+		switch (pChoix.toString()) {
+			case "Recherche +/-" : this.configuration.setJeu('R');
+								   this.affichageMenu();
+								   break; 
+			case "Mastermind" : this.configuration.setJeu('M');
+			   					this.affichageMenu();
+								break; 
+			case "Challenger" : this.configuration.setMode('C');
+			   					this.affichageMenu();
+								break; 
+			case "Défense" : this.configuration.setMode('D');
+			   				 this.affichageMenu();
+							 break; 
+			case "Duel" : this.configuration.setMode('U');
+			   			  this.affichageMenu();
+						  break; 
+			case "Quitter" : break; 
+			case "Option" : this.configuration.affichageMenu();
+							this.affichageMenu();
+							break; 
+			case "Lancer la partie" : System.out.println(pChoix.toString());
+									  break; 
+			default: break;
 		}
-
-	    logger.debug("Configuration du jeu choisi dans le menu jeu : " + this.getChoix());
 	}
 }

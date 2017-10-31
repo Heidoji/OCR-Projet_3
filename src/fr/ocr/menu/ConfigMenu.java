@@ -1,5 +1,8 @@
 package fr.ocr.menu;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 import fr.ocr.configuration.Configuration;
@@ -28,9 +31,16 @@ import fr.ocr.configuration.Configuration;
  *
  * @author Heidoji
  * @since 0.2
- * @version 0.2
+ * @version 0.4
  */
 public class ConfigMenu implements Menu {
+	/**
+	 * <b>Cet variable initialise le logger de log4j2</b>
+	 *
+	 * @ since 0.4
+	 */
+	private static final Logger logger = LogManager.getLogger(ConfigMenu.class);
+	
 	/**
 	 * Ce char représente le choix de l'utilisateur. 
 	 * 
@@ -90,6 +100,8 @@ public class ConfigMenu implements Menu {
 	 * @since 0.2
 	 */
 	public void afficherMenu() {
+		logger.info("Entre dans choisirMenu du menu de configuration");
+		
 		System.out.println("                                                               ");
 		System.out.println(" **************************************************************");
 		System.out.println(" *                                                            *");
@@ -125,6 +137,8 @@ public class ConfigMenu implements Menu {
 	 * @since 0.2
 	 */
 	public void choisirMenu() {
+		logger.info("Entre dans choisirMenu du menu de configuration");
+		
 		Scanner sc = new Scanner(System.in);
 		this.setChoix(sc.nextLine().charAt(0));
 		
@@ -135,6 +149,8 @@ public class ConfigMenu implements Menu {
 				   break; 
 		case 'O' : this.configuration.setCouleur(choisirValeur());
 		}
+		
+		logger.debug("Configuration du jeu choisi dans le menu de configuration : " + this.getChoix());
 	}
 	
 	/**
@@ -147,9 +163,12 @@ public class ConfigMenu implements Menu {
 	 * @see ConfigMenu#choisirMenu()
 	 * 
 	 * @return la valeur choisie par l'utilisateur
+	 *
 	 * @since 0.2
 	 */
 	private int choisirValeur() {
+		logger.info("Entre dans choisirValeur du menu de configuration");
+		
 		Scanner sc = new Scanner(System.in);
 		int valeur;
 		
@@ -157,7 +176,9 @@ public class ConfigMenu implements Menu {
 		  System.out.println("Veuillez entrer une valeur entre 4 et 10 : ");
 		  valeur = sc.nextInt();
 		  sc.nextLine();
+		  logger.debug("Valeur choisi pour " + this.getChoix() + " est " + valeur);
 		} while (valeur < 4 || valeur > 10);
+		
 		return valeur; 
 	}
 }

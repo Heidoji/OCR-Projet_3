@@ -1,5 +1,8 @@
 package fr.ocr.main;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import fr.ocr.jeu.Lanceur;
 
 /**
@@ -9,12 +12,25 @@ import fr.ocr.jeu.Lanceur;
  * @see Lanceur#LancerJeu()
  *
  * @author Heidoji
- * @version 0.2
+ * @version 0.4
  */
 
 public class Main {
+	/**
+	 * <b>Cette variable initialise le logger de log4j2</b>
+	 *
+	 * @ since 0.4
+	 */
+	private static final Logger logger = LogManager.getLogger(Main.class);
+	
 	public static void main(String[] args) {
+		logger.info("Entering application");
+		
 		Lanceur lanceur = new Lanceur();
 		lanceur.lancerJeu();
+		
+		logger.info("Exiting application");
 	}
+	
+	
 }

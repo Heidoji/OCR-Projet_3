@@ -15,7 +15,7 @@ package fr.ocr.jeu;
  * 
  * @author Heidoji
  * @since 0.2
- * @version 0.2
+ * @version 0.4
  */
 public abstract class Jeu {
 	protected boolean gagne;
@@ -47,7 +47,7 @@ public abstract class Jeu {
 	}
 	
 	public void getGagner() {
-		this.gagner.gagnerPartie(getNbEssai());
+		this.gagner.gagnerPartie(this.getNbEssai());
 	}
 	
 	public void getComparer(int cChiffreJoueur, int cChiffreSecret) {

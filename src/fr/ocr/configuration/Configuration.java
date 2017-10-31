@@ -9,7 +9,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.sun.glass.ui.Menu;
 
@@ -33,9 +34,17 @@ import fr.ocr.affichage.Choix;
  * </p>
  * 
  * @author Heidoji
- * @version 0.1
+ * @since 0.1
+ * @version 0.4
  */
 public class Configuration{
+	/**
+	 * <b>Cet variable initialise le logger de log4j2</b>
+	 *
+	 * @ since 0.4
+	 */
+	private static final Logger logger = LogManager.getLogger(Configuration.class);
+	
 	/**
 	 * <b>Variable contenant le jeu à lancer.</b>
 	 * <p>
@@ -120,7 +129,6 @@ public class Configuration{
 	 */	
 	private int couleur;
 
-
 	/**
 	 * <b>Variable contenant le nombre de chiffre ou couleur a decouvrir dans la combinaison secrète.</b>
 	 * 
@@ -180,7 +188,9 @@ public class Configuration{
 	 * @since 0.1
 	 */
 	public Configuration() {
+		logger.info("Entering Constructeur Empty Configuration");
 		readSavedFile();
+		logger.info("Saved File Read");
 	}
 	
 	/**
@@ -211,6 +221,7 @@ public class Configuration{
 	 * @since 0.1
 	 */
 	public Configuration(char pJeu, char pMode, int pEssai, int pCouleur, int pChiffre, boolean pModDev) {
+		logger.info("Entering Constructeur Configuration");
 		this.jeu = pJeu;
 		this.mode = pMode;
 		this.essai = pEssai;
@@ -219,6 +230,7 @@ public class Configuration{
 		this.modDev = pModDev;
 		
 		writeSavedFile();
+		logger.info("Files created");
 	}
 	
 	//Assesseurs
@@ -402,9 +414,11 @@ public class Configuration{
 	      this.modDev = dis.readBoolean();
       
 	    } catch (FileNotFoundException e) {
-	      e.printStackTrace();
+	       logger.error("Files Not found Exception : " + e);
+	       e.printStackTrace();
 	    } catch (IOException e) {
-	      e.printStackTrace();
+	       logger.error("IO Exception : " + e);
+	       e.printStackTrace();
 	    }       
 	}
 	
