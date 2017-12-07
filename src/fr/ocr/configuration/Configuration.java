@@ -14,20 +14,19 @@ import org.apache.logging.log4j.Logger;
 
 import com.sun.glass.ui.Menu;
 
-import fr.ocr.affichage.Choix;
-
 
 /**
  * <b>Configuration est la classe permettant de configurer et de sauvegarder les options de jeu</b>
  * <p>
  * Il permet de sauvegarder dans un fichier :
+ * </p>
  * <ul>
  * <li>le type de jeu</li>
  * <li>le mode de jeu</li>
  * <li>la difficulté</li>
  * <li>le nombre d'essai</li>
  * </ul>
- * </p>
+ *
  * <p>
  * De plus, il est possible d'afficher un menu recapitulatif des options
  * et de les modifier directement
@@ -35,13 +34,13 @@ import fr.ocr.affichage.Choix;
  * 
  * @author Heidoji
  * @since 0.1
- * @version 0.4
+ * @version 0.4.1
  */
 public class Configuration{
 	/**
 	 * <b>Cet variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(Configuration.class);
 	
@@ -49,11 +48,11 @@ public class Configuration{
 	 * <b>Variable contenant le jeu à lancer.</b>
 	 * <p>
 	 * Il est déterminé par deux valeurs :
+	 * </p>
 	 * <ul>
 	 * <li> R pour le jeu Recherche +/-</li>
 	 * <li> M pour le jeu Mastermind</li>
 	 * </ul>
-	 * </p>
 	 * 
 	 * @see Configuration#Configuration()
 	 * @see Configuration#Configuration(char, char, int, int, int, boolean)
@@ -61,8 +60,6 @@ public class Configuration{
 	 * @see Configuration#setJeu(char)
 	 * @see Configuration#readSavedFile()
 	 * @see Configuration#writeSavedFile()
-	 * @see Configuration#affichageMenu()
-	 * @see Menu#Lanceur(Choix)
 	 *
 	 * @since 0.1
 	 */
@@ -72,12 +69,12 @@ public class Configuration{
 	 * <b>Variable contenant le mode de jeu à lancer.</b>
 	 * <p>
 	 * Il est déterminé par trois valeurs :
+	 * </p>
 	 * <ul>
 	 * <li> C pour le mode Challenger</li>
 	 * <li> D pour le mode Défense</li>
 	 * <li> U pour le mode Duel</li>
 	 * </ul>
-	 * </p>
 	 * 
 	 * @see Configuration#Configuration()
 	 * @see Configuration#Configuration(char, char, int, int, int, boolean)
@@ -85,8 +82,6 @@ public class Configuration{
 	 * @see Configuration#setMode(char)
 	 * @see Configuration#readSavedFile()
 	 * @see Configuration#writeSavedFile()
-	 * @see Configuration#affichageMenu()
-	 * @see Menu#Lanceur(Choix)
 	 *
 	 * @since 0.1
 	 */
@@ -101,8 +96,6 @@ public class Configuration{
 	 * @see Configuration#setEssai(int)
 	 * @see Configuration#readSavedFile()
 	 * @see Configuration#writeSavedFile()
-	 * @see Configuration#affichageMenu()
-	 * @see Configuration#lanceurMenu()
 	 *
 	 * @since 0.1
 	 */	
@@ -122,8 +115,6 @@ public class Configuration{
 	 * @see Configuration#setCouleur(int)
 	 * @see Configuration#readSavedFile()
 	 * @see Configuration#writeSavedFile()
-	 * @see Configuration#affichageMenu()
-	 * @see Configuration#lanceurMenu()
 	 *
 	 * @since 0.1
 	 */	
@@ -142,8 +133,6 @@ public class Configuration{
 	 * @see Configuration#setChiffre(int)
 	 * @see Configuration#readSavedFile()
 	 * @see Configuration#writeSavedFile()
-	 * @see Configuration#affichageMenu()
-	 * @see Configuration#lanceurMenu()
 	 *
 	 * @since 0.1
 	 */	
@@ -158,8 +147,6 @@ public class Configuration{
 	 * @see Configuration#setModDev(boolean)
 	 * @see Configuration#readSavedFile()
 	 * @see Configuration#writeSavedFile()
-	 * @see Configuration#affichageMenu()
-	 * @see Configuration#lanceurMenu()
 	 *
 	 * @since 0.2
 	 */
@@ -188,9 +175,9 @@ public class Configuration{
 	 * @since 0.1
 	 */
 	public Configuration() {
-		logger.info("Entering Constructeur Empty Configuration");
+		logger.info("CLASS CONFIGURATION : Entering Constructeur Empty Configuration");
 		readSavedFile();
-		logger.info("Saved File Read");
+		logger.info("CLASS CONFIGURATION : Saved File Read");
 	}
 	
 	/**
@@ -199,16 +186,18 @@ public class Configuration{
 	 * Instancie un Menu avec les valeurs passées en paramètre et la sauve dans fichier de configuration.
 	 * </p>
 	 * 
-	 * @param cJeu
+	 * @param pJeu
 	 * 		Donne la préférence du jeu joué
-	 * @param cMode
+	 * @param pMode
 	 * 		Donne la préférence du mode de jeu joué
-	 * @param cEssai
+	 * @param pEssai
 	 * 		Donne le nombre d'essai possible pour découvrir le chiffre secret
-	 * @param cCouleur
+	 * @param pCouleur
 	 * 		Donne le nombre de couleur possible pour composer la combinaison dans le jeu Mastermind
-	 * @param cChiffre
+	 * @param pChiffre
 	 * 		Donne le nombre de chiffre ou couleur a decouvrir dans la combinaison secrète
+	 * @param pModDev
+	 * 		Donne le booleen d'activation pour l'affichage du mode développeur
 	 * 
 	 * @see Configuration#jeu
 	 * @see Configuration#mode
@@ -221,7 +210,7 @@ public class Configuration{
 	 * @since 0.1
 	 */
 	public Configuration(char pJeu, char pMode, int pEssai, int pCouleur, int pChiffre, boolean pModDev) {
-		logger.info("Entering Constructeur Configuration");
+		logger.info("CLASS CONFIGURATION : Entering Constructeur Configuration");
 		this.jeu = pJeu;
 		this.mode = pMode;
 		this.essai = pEssai;
@@ -230,7 +219,7 @@ public class Configuration{
 		this.modDev = pModDev;
 		
 		writeSavedFile();
-		logger.info("Files created");
+		logger.info("CLASS CONFIGURATION : Files created");
 	}
 	
 	//Assesseurs
@@ -332,7 +321,7 @@ public class Configuration{
 	/**
 	 * <b>Mise a jour de la valeur du nombre d'essai possible</b>
 	 * 
-	 * @param pMode
+	 * @param pEssai
 	 * 		Mis à jour du nombre d'essai possible
 	 *
 	 * @since 0.1
@@ -371,7 +360,7 @@ public class Configuration{
 	/**
 	 * <b>Mise a jour du boolean du mode developpeur.</b>
 	 * 
-	 * @param pChiffre
+	 * @param pModDev
 	 *		Valeur du booleen du mode Developpeur
 	 *
 	 * @since 0.2
@@ -398,6 +387,7 @@ public class Configuration{
 	 * @since 0.2
 	 */
 	private void readSavedFile(){
+		logger.info("CLASS CONFIGURATION : Sauvegarde du fichier de configuration");
 		DataInputStream dis;
 		
 	    try {
@@ -412,12 +402,13 @@ public class Configuration{
 	      this.couleur = dis.readInt();
 	      this.chiffre = dis.readInt();
 	      this.modDev = dis.readBoolean();
+	      logger.info("CLASS CONFIGURATION : Fichier de configuration sauvegardé");
       
 	    } catch (FileNotFoundException e) {
-	       logger.error("Files Not found Exception : " + e);
+	       logger.error("CLASS CONFIGURATION : Files Not found Exception : " + e);
 	       e.printStackTrace();
 	    } catch (IOException e) {
-	       logger.error("IO Exception : " + e);
+	       logger.error("CLASS CONFIGURATION : IO Exception : " + e);
 	       e.printStackTrace();
 	    }       
 	}
@@ -437,6 +428,7 @@ public class Configuration{
 	 * @since 0.2
 	 */
 	private void writeSavedFile(){
+		logger.info("CLASS CONFIGURATION : Lecture du fichier de configuration");
 		DataOutputStream dos;
 		
 	    try {
@@ -452,11 +444,14 @@ public class Configuration{
 	      dos.writeInt(this.chiffre);
 	      dos.writeBoolean(this.modDev);
 	      dos.close();
+	      logger.info("CLASS CONFIGURATION : Fichier de configuration lu");
       
 	    } catch (FileNotFoundException e) {
-	      e.printStackTrace();
+	    	logger.error("CLASS CONFIGURATION : Files Not found Exception : " + e);
+	    	e.printStackTrace();
 	    } catch (IOException e) {
-	      e.printStackTrace();
+	    	logger.error("CLASS CONFIGURATION : IO Exception : " + e);
+	    	e.printStackTrace();
 	    }       
 	}
 }

@@ -5,6 +5,6 @@ package fr.ocr.mode;
  * 
  * @author Heidoji
  * @since 0.2
- * @version 0.4
+ * @version 0.4.1
  */
 public class DefenseMode extends Mode{}

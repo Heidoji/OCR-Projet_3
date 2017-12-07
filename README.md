@@ -51,6 +51,7 @@ Il doit être possible de lancer l'application dans un mode "développeur". Dans c
 Pour chaque jeu :
 * le nombre de cases de la combinaison secrète
 * le nombre d'essais possibles
+
 Pour le Mastermind :
 * le nombre couleur/chiffre utilisables (de 4 à 10)
 * Un fichier de configuration (log4j.xml) permettra de paramétrer les logs de l'application. La gestion des logs se fera avec Apache Log4j.
@@ -107,5 +108,8 @@ Pour le Mastermind :
 * DONE : Javadoc fait pour les packages Menu, Mode et Joueur
 * DONE : Mise en place de log4j2 pour Main, Configuration, Menu, Mode et Joueur
 
+### Version 0.4.1
+* DONE : Mise à jour de la Javadoc
+* DONE : Génération de la Javadoc
 
 ---

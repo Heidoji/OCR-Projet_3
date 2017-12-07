@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import fr.ocr.configuration.Configuration;
-import fr.ocr.main.Main;
 import fr.ocr.menu.ConfigMenu;
 import fr.ocr.menu.FinMenu;
 import fr.ocr.menu.JeuMenu;
@@ -22,14 +21,15 @@ import fr.ocr.mode.Mode;
  * <b>La classe Lanceur s'occupe de préparer le lancement du jeu</b>
  * <p>
  * Il gère :
+ * </p>
  * <ul>
  * <li>l'affichage des menus</li>
  * <li>l'instanciation du mode de jeu</li>
  * <li>l'initialisation du jeu</li>
- * </p>
+ * </ul>
  * 
- * @see Lanceur#Lanceur()
- * @see Lanceur#LancerJeu()
+ * @see Lanceur#Lanceur
+ * @see Lanceur#lancerJeu()
  *
  * @author Heidoji
  * @since 0.2
@@ -39,7 +39,7 @@ public class Lanceur {
 	/**
 	 * <b>Cette variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(Lanceur.class);
 	
@@ -48,16 +48,16 @@ public class Lanceur {
 	 * <p>
 	 * Il permet de selection le type de mode de jeu choisis'
 	 * Il exister 3 modes:
+	 * </p>
 	 * <ul>
 	 * <li> Le mode Challenge</li>
 	 * <li> Le mode Defense</li>
 	 * <li> Le mode Duel</li>
 	 * </ul>
-	 * </p>
 	 * 
 	 * @see Lanceur#Lanceur()
 	 * @see Lanceur#initialiserJeu()
-	 * @see Lanceur#setMode()
+	 * @see Lanceur#setMode(char)
 	 * @see Mode#Mode()
 	 *
 	 * @since 0.2
@@ -69,12 +69,12 @@ public class Lanceur {
 	 * <p>
 	 * Il permet de selection du menu a afficher'
 	 * Il exister 3 menus:
+	 * </p>
 	 * <ul>
 	 * <li> Le menu principal</li>
 	 * <li> Le mode de configuration</li>
 	 * <li> Le mode de fin</li>
 	 * </ul>
-	 * </p>
 	 * 
 	 * @see Lanceur#lancerJeu()
 	 * @see Menu
@@ -143,6 +143,8 @@ public class Lanceur {
 	 * 		Donne le nombre de couleur possible pour composer la combinaison dans le jeu Mastermind
 	 * @param cChiffre
 	 * 		Donne le nombre de chiffre ou couleur a decouvrir dans la combinaison secrète
+	 * @param cModDev
+	 * 		Donne le booléen d'affichage du mode developpeur
 	 * 
 	 * @see Lanceur#Lanceur(char, char, int, int, int, boolean)
 	 *
@@ -162,10 +164,8 @@ public class Lanceur {
 	 * </p>
 	 * 
 	 * @see Lanceur#initialiserJeu()
-	 * @see Menu#Menu()
 	 * @see Menu#getChoix()
-	 * @see Menu#afficheMenu()
-	 * @see Menu#choisirMenu()
+	 * @see Menu#afficherMenu()
 	 * @see ConfigMenu
 	 * @see JeuMenu
 	 * @see FinMenu

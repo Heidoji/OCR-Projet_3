@@ -1,16 +1,31 @@
 package fr.ocr.joueur;
 
-import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import fr.ocr.configuration.Configuration;
+import fr.ocr.joueur.RechercheIA;
 
+/**
+ * <b>La classe OrdinateurJoueur permet de gerer les décision de l'ordinateur</b>
+ * <p>
+ * Elle gère :
+ * </p>
+ * <ul>
+ * <li>Le choix du nombre secret par l'ordinateur</li>
+ * <li>La proposition d'un nombre pour la découverte du nombre secret</li>
+ * <li>La configuration de l'IA par rapport au jeu joué</li>
+ * </ul>
+ * 
+ * @author Heidoji
+ * @since 0.2
+ * @version 0.4.1
+ */
 public class OrdinateurJoueur implements Joueur {
 	/**
 	 * <b>Cette variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(OrdinateurJoueur.class);
 	
@@ -21,7 +36,7 @@ public class OrdinateurJoueur implements Joueur {
 	 * </p>
 	 * 
 	 * @see OrdinateurJoueur#choisirChiffreSecret()
-	 * @see OrdinateurJoueur#trouverChiffreSecret()
+	 * @see OrdinateurJoueur#trouverChiffreSecret(String)
 	 *
 	 * @since 0.2
 	*/
@@ -53,6 +68,37 @@ public class OrdinateurJoueur implements Joueur {
 	*/
 	private int chiffreJoueur;
 	
+	/**
+	 * <b>Variable contenant le nombre de couleur possible pour former la combinaison secrète
+	 * dans le jeu Mastermind</b>
+	 * 
+	 * <p>
+	 * La valeur varie entre 4 et 10
+	 * </p>
+	 *
+	 * @see OrdinateurJoueur#getCouleur()
+	 * @see OrdinateurJoueur#setCouleur(int)
+	 * @see OrdinateurJoueur#choisirChiffreSecret()
+	 * @see OrdinateurJoueur#trouverChiffreSecret(String)
+	 *
+	 * @since 0.4.1
+	 */	
+	 private int couleur;
+	 
+	/**
+	 * <b>Variable contenant l'objet IA pour la gestion de IA de l'ordinateur</b>
+	 * 
+	 * <p>
+	 * L'objet contient soit l'IA pour le jeu Recherche ou Mastermind
+	 * </p>
+	 *
+	 * @see OrdinateurJoueur#setIA()
+	 * @see OrdinateurJoueur#trouverChiffreSecret(String)
+	 *
+	 * @since 0.4.1
+	 */	
+	 private IA ia;
+	
 	//Assesseurs
 	
 	/**
@@ -71,7 +117,7 @@ public class OrdinateurJoueur implements Joueur {
 	/**
 	 * <b>Retourne le nombre choisi par le joueur Ordinateur pour decouvrir le Nombre secret.</b> 
 	 * 
-	 * @see OrdinateurJoueur#trouverChiffreSecret()
+	 * @see OrdinateurJoueur#trouverChiffreSecret(String)
 	 *
 	 * @return le nombre choisi par le joueur Ordinateur pour decouvrir le Nombre secret.
 	 *
@@ -81,6 +127,17 @@ public class OrdinateurJoueur implements Joueur {
 		return this.chiffreJoueur;
 	}
 	
+	/**
+	 * <b>Retourne le nombre de possibilité pour former la combinaison secrète dans le jeu Mastermind enregistrée dans le fichier de configuration.</b>
+	 * 
+	 * @return le nombre de possibilité pour former la combinaison secrète dans le jeu Mastermind
+	 *
+	 * @since 0.4.1
+	 */
+	public int getCouleur() {
+		return this.couleur;
+	}
+	
 	//Mutateurs
 	
 	/**
@@ -88,7 +145,8 @@ public class OrdinateurJoueur implements Joueur {
 	 *
 	 * @see OrdinateurJoueur#choisirChiffreSecret() 
 	 * 
-	 * @param la nouvelle valeur du nombre nombre secret choisi par le joueur Ordinateur.
+	 * @param pChiffreSecret
+	 * 		la nouvelle valeur du nombre nombre secret choisi par le joueur Ordinateur.
 	 *
 	 * @since 0.2
 	 */
@@ -99,14 +157,48 @@ public class OrdinateurJoueur implements Joueur {
 	/**
 	 * <b>Met a jour le nombre choisi par le joueur Ordinateur pour decouvrir le Nombre secret.</b>
 	 *
-	 * @see OrdinateurJoueur#trouverChiffreSecret() 
+	 * @see OrdinateurJoueur#trouverChiffreSecret(String) 
 	 * 
-	 * @param la nouvelle valeur du nombre choisi par le joueur Ordinateur pour decouvrir le Nombre secret.
+	 * @param pChiffreJoueur
+	 * 		la nouvelle valeur du nombre choisi par le joueur Ordinateur pour decouvrir le Nombre secret.
 	 *
 	 * @since 0.2
 	 */
 	public void setChiffreJoueur(int pChiffreJoueur) {
 		this.chiffreJoueur = pChiffreJoueur;
+	}
+	
+	/**
+	 * <b>Mise a jour de la valeur du nombre de couleur possible dans une combinaison de Mastermind</b>
+	 * 
+	 * @param pCouleur
+	 *		Mise a jour de la valeur du nombre de couleur possible dans une combinaison de Mastermind
+	 *
+	 * @since 0.4.1
+	 */
+	public void setCouleur(int pCouleur) {	
+		if (configuration.getJeu() == 'R') {
+			this.couleur = 10;
+		}
+		else {
+			this.couleur = pCouleur;
+		}
+	}
+	
+	/**
+	 * <b>Selection de l'IA par rapport au jeu joué</b>
+	 * 
+	 * @see OrdinateurJoueur#trouverChiffreSecret(String)
+	 * 
+	 * @since 0.4.1
+	 */
+	public void setIA() {	
+		if (configuration.getJeu() == 'R') {
+			this.ia = new RechercheIA();
+		}
+		else {
+			this.ia = new MastermindIA();
+		}
 	}
 	
 	//Autres Méthodes
@@ -146,13 +238,17 @@ public class OrdinateurJoueur implements Joueur {
 	 *
 	 * TO BE DONE 
 	 * 
-	 * @since x.x
+	 * @since 0.4.1
 	 */
-	public int trouverChiffreSecret() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("");
-	    System.out.println("Proposez un chiffre : ");
-	    this.setChiffreJoueur(Integer.parseInt(sc.nextLine()));
+	public int trouverChiffreSecret(String pResultat) {
+		logger.info("Entre dans OrdinateurJoueur.trouverChiffreSecret()");
+		//System.out.println("OrdinateurJoueur : " + this.getChiffreJoueur() + "," + this.getChiffreSecret());
+		
+		if (this.getChiffreJoueur() == 0) {
+			this.setIA();
+		}
+		
+		this.setChiffreJoueur(this.ia.trouverChiffreSecret(pResultat));
 		return this.getChiffreJoueur();
 	}
 }

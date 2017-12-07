@@ -10,22 +10,22 @@ import java.util.Scanner;
  * 
  * <p>
  * Il est possible de choisir :
+ * </p>
  * <ul>
  * <li>de relancer le jeu</li>
  * <li>de quitter le jeu</li>
  * <li>de revenir au menu du jeu</li>
  * </ul>
- * </p>
  *
  * @author Heidoji
  * @since 0.2
- * @version 0.4
+ * @version 0.4.1
  */
 public class FinMenu implements Menu {
 	/**
 	 * <b>Cet variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(FinMenu.class);
 	
@@ -33,7 +33,7 @@ public class FinMenu implements Menu {
 	 * Ce char représente le choix de l'utilisateur. 
 	 * 
 	 * @see FinMenu#getChoix()
-	 * @see FinfigMenu#setChoix(char)
+	 * @see FinMenu#setChoix(char)
 	 * @see FinMenu#choisirMenu()
 	 * @since 0.2
 	 */
@@ -55,7 +55,7 @@ public class FinMenu implements Menu {
 	/**
 	 * <b>Mutateur du char choix de la classe FinMenu</b>
 	 * 
-	 * @param
+	 * @param pChoix
 	 * 		char passé en argument pour changer la valeur de choix
 	 *
 	 * @since 0.2

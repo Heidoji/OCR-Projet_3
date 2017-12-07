@@ -15,12 +15,13 @@ import fr.ocr.joueur.OrdinateurJoueur;
  * <b>La classe Mode permet de gerer la seqeunce de jeu selon le mode choisi</b>
  * <p>
  * Elle est la classe mere des classes suivantes :
+ * </p>
  * <ul>
  * <li>DuelMode</li>
  * <li>ChallengeMode</li>
  * <li>DefenseMode</li>
  * </ul>
- * </p>
+ *
  * <p>
  * De plus,  elle affiche un etat des variables ChiffreSecret et ChiffreJoueur 
  * En mode developpeur.
@@ -28,13 +29,13 @@ import fr.ocr.joueur.OrdinateurJoueur;
  * 
  * @author Heidoji
  * @since 0.2
- * @version 0.4
+ * @version 0.4.1
  */
 public abstract class Mode {
 	/**
 	 * <b>Cet variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(Mode.class);
 	
@@ -52,11 +53,11 @@ public abstract class Mode {
 	 * <b>Variable contenant le jeu à lancer.</b>
 	 * <p>
 	 * Il est déterminé par deux valeurs :
+	 * </p>
 	 * <ul>
 	 * <li> R pour le jeu Recherche +/-</li>
 	 * <li> M pour le jeu Mastermind</li>
 	 * </ul>
-	 * </p>
      * 
 	 * @see Jeu
 	 * @see Mode#sequenceJeu
@@ -108,7 +109,7 @@ public abstract class Mode {
 	 * 
 	 * @see Mode#Mode
 	 * @see Mode#getModDev
-	 * @see Mode#setModDev(Boolean)
+	 * @see Mode#setModDev(boolean)
 	 * @see Mode#sequenceJeu
 	 *
 	 * @since 0.2
@@ -116,9 +117,22 @@ public abstract class Mode {
 	protected boolean modDev;
 	
 	/**
+	 * <b>Variable contenant le nombre d'essai pour découvrir la combinaison secrète.</b>
+	 * 
+	 * @see Mode#Mode
+	 * @see Mode#getModDev
+	 * @see Mode#setModDev(boolean)
+	 * @see Mode#sequenceJeu
+	 *
+	 * @since 0.2
+	 */	
+	protected String resultat;
+	
+	/**
 	 * <b>Constructeur vide Mode.</b>
 	 * <p>
 	 * Instancie un Mode et :
+	 * </p>
 	 * <ul>
 	 * <li>Un joueur humain</li>
 	 * <li>Un joueur gere par l'ordinateur</li>
@@ -126,11 +140,12 @@ public abstract class Mode {
 	 * <li>l'activation du mode de developpeur</li>
 	 * <li>le jeu selectionne</li>
 	 * </ul>
-	 * </p>
 	 * 
 	 * @see Configuration#getEssai
 	 * @see Configuration#getModDev
 	 * @see Configuration#getJeu
+	 * @see HumainJoueur
+	 * @see OrdinateurJoueur
 	 *
 	 * @since 0.2
 	 */
@@ -138,6 +153,7 @@ public abstract class Mode {
 		logger.info("Entering Constructeur Empty Mode");
 		
 		this.player1 = new HumainJoueur();
+		this.player1.setCouleur(configuration.getCouleur());
 		this.player2 = new OrdinateurJoueur();
 		
 		this.essai = configuration.getEssai();
@@ -179,12 +195,17 @@ public abstract class Mode {
 		return this.modDev;
 	}
 	
+	public String getResultat() {
+		return this.resultat;
+	}
+	
 	//Mutateur
 	
 	/**
 	 * <b>Met a jour le nombre d'essai enregistrée dans le fichier de configuration.</b>
 	 * 
-	 * @param la nouvelle valeur du nombre d'essai pour decouvrir le nombre secret
+	 * @param pEssai
+	 * 		la nouvelle valeur du nombre d'essai pour decouvrir le nombre secret
 	 *
 	 * @since 0.2
 	 */
@@ -195,12 +216,17 @@ public abstract class Mode {
 	/**
 	 * <b>Met a jour le booleen d'activation du mode developpeur enregistrée dans le fichier de configuration.</b>
 	 * 
-	 * @param la nouvelle valeur du booleen d'activation du mode developpeur
+	 * @param pModDev
+	 * 		la nouvelle valeur du booleen d'activation du mode developpeur
 	 *
 	 * @since 0.2
 	 */
 	public void setModDev(boolean pModDev) {
 		this.modDev = pModDev;
+	}
+	
+	public void setResultat(String pResultat) {
+		this.resultat = pResultat;
 	}
 	
 	//Autre méthode
@@ -209,22 +235,22 @@ public abstract class Mode {
 	 * <b>Cette classe determine la sequence de jeu.</b>
 	 * <p>
 	 * Cette classe appelle les classes chargees de :
+	 * </p>
 	 * <ul>
 	 * <li>La creation du chiffre secret</li>
 	 * <li>La resolution de la recherche du chiffre secret</li>
-	 * <li>L'affichage du vainqueur,?li>
+	 * <li>L'affichage du vainqueur</li>
 	 * </ul>
-	 * </p>
 	 *
 	 * @see Mode#getModDev()
 	 * @see Mode#commentDev()
-	 * @see player1#choisirChiffreSecret()
-	 * @see player1#getChiffreSecret()
-	 * @see player2#getChiffreJoueur()
-	 * @see jeu#getGagne(int, int)
-	 * @see jeu#getNbEssai()
-	 * @see jeu#getComparer(int, int)
-	 * @see jeu#getGagner()
+	 * @see Joueur#choisirChiffreSecret()
+	 * @see Joueur#getChiffreSecret()
+	 * @see Joueur#getChiffreJoueur()
+	 * @see Jeu#getGagne(int, int)
+	 * @see Jeu#getNbEssai()
+	 * @see Jeu#getComparer(int, int)
+	 * @see Jeu#getGagner()
 	 *
 	 * @since 0.2
 	 */
@@ -238,8 +264,9 @@ public abstract class Mode {
 		
 		while (!(this.jeu.getGagne(this.player2.getChiffreJoueur(), this.player1.getChiffreSecret()) 
 				|| this.jeu.getNbEssai() >= this.essai)) {
+			logger.info("Nouveau passage dans la boucle de découverte du chiffre");
 			this.jeu.setNbEssai();
-			this.jeu.getComparer(this.player2.trouverChiffreSecret(), this.player1.getChiffreSecret());
+			this.setResultat(this.jeu.getComparer(this.player2.trouverChiffreSecret(this.getResultat()), this.player1.getChiffreSecret()));
 		}
 		
 		if (this.jeu.getGagne()) {
@@ -260,10 +287,8 @@ public abstract class Mode {
 	 * permettre une verification plus aisee des mecaniques du jeu
 	 * </p>
 	 *
-	 * @see player1#getChiffreSecret()
-	 * @see player1#getChiffreJoueur()
-	 * @see player2#getChiffreSecret()
-	 * @see player2#getChiffreJoueur()
+	 * @see Joueur#getChiffreSecret()
+	 * @see Joueur#getChiffreJoueur()
 	 *
 	 * @since 0.2
 	 */

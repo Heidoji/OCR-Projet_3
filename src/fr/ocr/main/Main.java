@@ -9,17 +9,17 @@ import fr.ocr.jeu.Lanceur;
  * <b>Main est la classe lance le jeu en créant le lanceur du jeu</b>
  * 
  * @see Lanceur#Lanceur()
- * @see Lanceur#LancerJeu()
+ * @see Lanceur#lancerJeu()
  *
  * @author Heidoji
- * @version 0.4
+ * @version 0.4.1
  */
 
 public class Main {
 	/**
 	 * <b>Cette variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(Main.class);
 	

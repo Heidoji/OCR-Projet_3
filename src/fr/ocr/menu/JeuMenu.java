@@ -12,6 +12,7 @@ import fr.ocr.configuration.Configuration;
  * <p>
  * De plus, il permet de mettre à jour la configuration du jeu à travers la 
  * Class Configuration
+ * </p>
  * Il est possible de choisir :
  * <ul>
  * <li>le type de jeu</li>
@@ -19,24 +20,23 @@ import fr.ocr.configuration.Configuration;
  * <li>d'acceder à la configuration du jeu</li>
  * <li>de quitter le programme</li>
  * </ul>
- * </p>
  * 
  * @see Configuration#Configuration()
  * @see Configuration#getJeu()
  * @see Configuration#getMode()
- * @see Configuration#setJeu(String)
- * @see Configuration#setMode(String) 
+ * @see Configuration#setJeu(char)
+ * @see Configuration#setMode(char) 
  * @see JeuMenu#choix
  *
  * @author Heidoji
  * @since 0.2
- * @version 0.4
+ * @version 0.4.1
  */
 public class JeuMenu implements Menu {
 	/**
 	 * <b>Cet variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(JeuMenu.class);
 	
@@ -75,7 +75,7 @@ public class JeuMenu implements Menu {
 	/**
 	 * <b>Mutateur du char choix de la classe JeuMenu</b>
 	 * 
-	 * @param
+	 * @param pChoix
 	 * 	char passé en argument pour changer la valeur de choix
 	 *
 	 * @since 0.2
@@ -140,8 +140,8 @@ public class JeuMenu implements Menu {
 	 * </p>
 	 * 
 	 * @see JeuMenu#choix
-	 * @see Configuration#setJeu(String)
-	 * @see Configuration#setMode(String)
+	 * @see Configuration#setJeu(char)
+	 * @see Configuration#setMode(char)
 	 *
 	 * @since 0.2
 	 */

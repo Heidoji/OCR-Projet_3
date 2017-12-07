@@ -13,6 +13,7 @@ import fr.ocr.configuration.Configuration;
  * <p>
  * De plus, il permet de mettre à jour la configuration du jeu à travers la 
  * Class Configuration
+ * </p>
  * Il est possible de choisir :
  * <ul>
  * <li>le type de jeu</li>
@@ -20,24 +21,23 @@ import fr.ocr.configuration.Configuration;
  * <li>d'acceder à la configuration du jeu</li>
  * <li>de quitter le programme</li>
  * </ul>
- * </p>
  * 
  * @see Configuration#Configuration()
  * @see Configuration#getJeu()
  * @see Configuration#getMode()
- * @see Configuration#setJeu(String)
- * @see Configuration#setMode(String) 
+ * @see Configuration#setJeu(char)
+ * @see Configuration#setMode(char) 
  * @see JeuMenu#choix
  *
  * @author Heidoji
  * @since 0.2
- * @version 0.4
+ * @version 0.4.1
  */
 public class ConfigMenu implements Menu {
 	/**
 	 * <b>Cet variable initialise le logger de log4j2</b>
 	 *
-	 * @ since 0.4
+	 * @since 0.4
 	 */
 	private static final Logger logger = LogManager.getLogger(ConfigMenu.class);
 	
@@ -76,7 +76,7 @@ public class ConfigMenu implements Menu {
 	/**
 	 * <b>Mutateur du char choix de la classe ConfigMenu</b>
 	 * 
-	 * @param
+	 * @param pChoix
 	 * 	char passé en argument pour changer la valeur de choix
 	 *
 	 * @since 0.2
@@ -131,8 +131,8 @@ public class ConfigMenu implements Menu {
 	 * </p>
 	 * 
 	 * @see ConfigMenu#choix
-	 * @see Configuration#setJeu(String)
-	 * @see Configuration#setMode(String)
+	 * @see Configuration#setJeu(char)
+	 * @see Configuration#setMode(char)
 	 *
 	 * @since 0.2
 	 */
@@ -156,7 +156,7 @@ public class ConfigMenu implements Menu {
 	/**
 	 * <b>Cette classe permet à l'utilisateur de choisir une valeur</b>
 	 * <p>
-	 * Cette valeur est comprise entre 4 et 10.</br>
+	 * Cette valeur est comprise entre 4 et 10.
 	 * Cette classe est utilisée pour configurer les valeurs d'essai, de couleur et de chiffre du fichier de Configuration
 	 * </p>
 	 * 

@@ -1,23 +1,39 @@
 package fr.ocr.jeu;
 
 /**
- * <b>Compare deux chaines de meme longueur et retourne une chaine donnant le nombre de chiffre bien place
- * et de chiffre present</b>
- * 
- * @param pChiffreSecret
- * 	La valeur à découvrir initialisé en début de jeu a comparé avec le ChiffreJoueur
- *
- * @param pChiffreJoueur
- * 	La valeur donnée par le joueur a comparé avec le ChiffreSecret
- * 
- * @return Le resultat de la comparaison
+ * <b>MastermindComparer est la classe permettant la comparaison de deux nombres</b>
+ * <p>
+ * Il prend deux nombres :
+ * </p>
+ * <ul>
+ * <li>Le chiffre choisis par le joueur</li>
+ * <li>Le chiffre secret</li>
+ * </ul>
  * 
  * @author Heidoji
- * @since 0.2
- * @version 0.2
- */	
+ * @since 0.3
+ * @version 0.4.1
+ */
 public class MastermindComparer implements Comparer {
-	public void comparerChiffre(int pChiffreJoueur, int pChiffreSecret) {
+	/**
+	 * <b>Compare deux chaines de meme longueur et retourne une chaine donnant le nombre de chiffre bien place
+	 * et de chiffre present</b>
+	 * 
+	 * @see MastermindJeu#MastermindJeu()
+	 * 
+	 * @param pChiffreSecret
+	 * 	La valeur à découvrir initialisé en début de jeu a comparé avec le ChiffreJoueur
+	 *
+	 * @param pChiffreJoueur
+	 * 	La valeur donnée par le joueur a comparé avec le ChiffreSecret
+	 * 
+	 * @return Le resultat de la comparaison sous la forme d'une chaîne de caractère
+	 * 
+	 * @author Heidoji
+	 * @since 0.3
+	 * @version 0.4.1
+	 */	
+	public String comparerChiffre(int pChiffreJoueur, int pChiffreSecret) {
 		String str = "";
 		String nombre[] = String.valueOf(pChiffreJoueur).split("");
 		String nombre_secret[] = String.valueOf(pChiffreSecret).split("");
@@ -47,5 +63,6 @@ public class MastermindComparer implements Comparer {
 			str += "Aucun chiffre correct";
 		
 		System.out.println("Proposition : " + pChiffreJoueur + " -> Réponse :  " + str);
+		return (bienPlace + "" + present);
 	}
 }
