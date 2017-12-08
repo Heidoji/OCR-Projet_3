@@ -42,9 +42,9 @@ public class DuelMode extends Mode {
 	 * @see Mode#commentDev()
 	 * @see Joueur#choisirChiffreSecret()
 	 * @see Joueur#getChiffreSecret()
-	 * @see Jeu#getGagne(int, int)
+	 * @see Jeu#getGagne(String, String)
 	 * @see Jeu#getNbEssai()
-	 * @see Jeu#getComparer(int, int)
+	 * @see Jeu#getComparer(String, String)
 	 * @see Jeu#getGagne()
 	 *
 	 * @since 0.2

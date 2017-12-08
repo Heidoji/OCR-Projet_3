@@ -25,10 +25,10 @@ public class RechercheComparer implements Comparer{
 	 * @since 0.3
 	 * @version 0.4.1
 	 */	
-	public String comparerChiffre(int pChiffreJoueur, int pChiffreSecret) {
+	public String comparerChiffre(String pChiffreJoueur, String pChiffreSecret) {
 		String str = "";
-		String nombre[] = String.valueOf(pChiffreJoueur).split("");
-		String nombre_secret[] = String.valueOf(pChiffreSecret).split("");
+		String nombre[] = pChiffreJoueur.split("");
+		String nombre_secret[] = pChiffreSecret.split("");
 		
 		for (int i=0 ; i < nombre.length ; i++) {
 			//System.out.println("Valeur nombre secret : " + nombre_secret[i] + "Valeur nombre : " + nombre[i]);

@@ -13,7 +13,7 @@ package fr.ocr.joueur;
  * 
  * @author Heidoji
  * @since 0.3
- * @version 0.4.1
+ * @version 0.5
  */
 public interface IA {
 	/**
@@ -30,5 +30,5 @@ public interface IA {
 	 * 
 	 * @since 0.3
 	 */
-	public int trouverChiffreSecret(String pResultat);
+	public String trouverChiffreSecret(String pResultat);
 }

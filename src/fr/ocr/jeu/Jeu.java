@@ -101,8 +101,8 @@ public abstract class Jeu {
 	 *
 	 * @since 0.2
 	 */
-	public boolean getGagne(int cChiffreJoueur, int cChiffreSecret) {
-		if (cChiffreJoueur == cChiffreSecret) {
+	public boolean getGagne(String cChiffreJoueur, String cChiffreSecret) {
+		if (cChiffreJoueur.contentEquals(cChiffreSecret)) {
 			this.setGagne(true);
 		}
 		
@@ -138,7 +138,7 @@ public abstract class Jeu {
 	 *
 	 * @since 0.2
 	 */
-	public String getComparer(int cChiffreJoueur, int cChiffreSecret) {
+	public String getComparer(String cChiffreJoueur, String cChiffreSecret) {
 		return this.comparer.comparerChiffre(cChiffreJoueur, cChiffreSecret);
 	}
 

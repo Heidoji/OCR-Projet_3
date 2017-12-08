@@ -29,7 +29,7 @@ public class NombreEchelleException extends Exception {
 	 *
 	 * @since 0.4.1
 	 */
-	public NombreEchelleException (int cNombre) {
+	public NombreEchelleException (String cNombre) {
 		super("Chiffre utilisé incorrect (hors échelle) : " + cNombre + "\n");
 	}
 }

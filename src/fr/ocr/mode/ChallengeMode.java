@@ -45,7 +45,10 @@ public class ChallengeMode extends Mode{
 		logger.info("Mode intancie en ChallengeMode");
 		
 		this.player1 = new OrdinateurJoueur();
+		this.player1.setChiffreJoueur("");
 		this.player2 = new HumainJoueur();
+		this.player2.setChiffreJoueur("");
+		
 		this.player2.setCouleur(configuration.getCouleur());
 	}
 }

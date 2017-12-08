@@ -18,8 +18,8 @@ public interface Comparer {
 	/**
 	 * <b>Méthode comparant deux chiffres et retourne un String comme résultat.</b>
 	 * 
-	 * @see RechercheComparer#comparerChiffre(int, int)
-	 * @see MastermindComparer#comparerChiffre(int, int)
+	 * @see RechercheComparer#comparerChiffre(String, String)
+	 * @see MastermindComparer#comparerChiffre(String, String)
 	 *
 	 * @param pChiffreJoueur
 	 * 		La variable contenant la proposition du joueur
@@ -30,5 +30,5 @@ public interface Comparer {
 	 *
 	 * @since 0.3
 	 */
-	public String comparerChiffre(int pChiffreJoueur, int pChiffreSecret);
+	public String comparerChiffre(String pChiffreJoueur, String pChiffreSecret);
 }

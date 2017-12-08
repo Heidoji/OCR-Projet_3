@@ -26,7 +26,7 @@ public class NombreNegatifException extends Exception {
 	 *
 	 * @since 0.4.1
 	 */
-	public NombreNegatifException (int cNombre) {
+	public NombreNegatifException (String cNombre) {
 		super("Nombre saisi négatif : " + cNombre + "\n");
 	}
 }

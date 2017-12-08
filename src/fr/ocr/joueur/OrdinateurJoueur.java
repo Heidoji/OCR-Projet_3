@@ -49,11 +49,11 @@ public class OrdinateurJoueur implements Joueur {
 	 * </p>
 	 * 
 	 * @see OrdinateurJoueur#getChiffreSecret()
-	 * @see OrdinateurJoueur#setChiffreSecret(int)
+	 * @see OrdinateurJoueur#setChiffreSecret(String)
 	 *
 	 * @since 0.2
 	*/
-	private int chiffreSecret;
+	private String chiffreSecret;
 	
 	/**
      * <b>Variable contenant le chiffreJoueur du joueur Ordinateur.</b>
@@ -62,11 +62,11 @@ public class OrdinateurJoueur implements Joueur {
 	 * </p>
 	 * 
 	 * @see OrdinateurJoueur#getChiffreJoueur()
-	 * @see OrdinateurJoueur#setChiffreJoueur(int)
+	 * @see OrdinateurJoueur#setChiffreJoueur(String)
 	 *
 	 * @since 0.2
 	*/
-	private int chiffreJoueur;
+	private String chiffreJoueur;
 	
 	/**
 	 * <b>Variable contenant le nombre de couleur possible pour former la combinaison secrète
@@ -77,7 +77,7 @@ public class OrdinateurJoueur implements Joueur {
 	 * </p>
 	 *
 	 * @see OrdinateurJoueur#getCouleur()
-	 * @see OrdinateurJoueur#setCouleur(int)
+	 * @see OrdinateurJoueur#setCouleur(String)
 	 * @see OrdinateurJoueur#choisirChiffreSecret()
 	 * @see OrdinateurJoueur#trouverChiffreSecret(String)
 	 *
@@ -110,7 +110,7 @@ public class OrdinateurJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public int getChiffreSecret() {
+	public String getChiffreSecret() {
 		return this.chiffreSecret;
 	}
 	
@@ -123,7 +123,7 @@ public class OrdinateurJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public int getChiffreJoueur() {
+	public String getChiffreJoueur() {
 		return this.chiffreJoueur;
 	}
 	
@@ -150,7 +150,7 @@ public class OrdinateurJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public void setChiffreSecret(int pChiffreSecret) {
+	public void setChiffreSecret(String pChiffreSecret) {
 		this.chiffreSecret = pChiffreSecret;
 	}
 	
@@ -164,7 +164,7 @@ public class OrdinateurJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public void setChiffreJoueur(int pChiffreJoueur) {
+	public void setChiffreJoueur(String pChiffreJoueur) {
 		this.chiffreJoueur = pChiffreJoueur;
 	}
 	
@@ -206,7 +206,7 @@ public class OrdinateurJoueur implements Joueur {
 	/**
 	 * <b>Methode qui choisi aleatoirement un chiffre secret</b>
 	 *
-	 * @see OrdinateurJoueur#setChiffreSecret(int)
+	 * @see OrdinateurJoueur#setChiffreSecret(String)
 	 * @see OrdinateurJoueur#getChiffreSecret()
 	 * @see Configuration#getCouleur()
 	 * @see Configuration#getJeu()
@@ -214,21 +214,27 @@ public class OrdinateurJoueur implements Joueur {
 	 * 
 	 * @since 0.2
 	 */
-	public int choisirChiffreSecret() {
+	public String choisirChiffreSecret() {
 		logger.info("Entre dans OrdinateurJoueur.choisirChiffreSecret()");
 		int nombre = 0; 
-		int couleur = configuration.getCouleur();
+		int couleur;
 		if (configuration.getJeu() == 'R') {
 			couleur = 10;
 		}
+		else 
+			couleur = configuration.getCouleur();
 		
-		do {
-			for (int i = 0; i < configuration.getChiffre(); i++) {
-				nombre = nombre * 10 + (int) (Math.random() * couleur);
-			}
-		} while (false);
+		for (int i = 0; i < configuration.getChiffre(); i++) {
+			nombre = nombre * 10 + (int) (Math.random() * couleur);
+		}
+		
+		String Stringnombre = String.valueOf(nombre);
+		
+		while (Stringnombre.length() < configuration.getChiffre()) {
+			Stringnombre = "0" + Stringnombre;
+        }
 			
-		this.setChiffreSecret(nombre);
+		this.setChiffreSecret(Stringnombre);
 		logger.debug("Chiffre Secret choisi par l'ordinateur : " + this.getChiffreSecret());
 		return this.getChiffreSecret();
 	}
@@ -240,11 +246,11 @@ public class OrdinateurJoueur implements Joueur {
 	 * 
 	 * @since 0.4.1
 	 */
-	public int trouverChiffreSecret(String pResultat) {
+	public String trouverChiffreSecret(String pResultat) {
 		logger.info("Entre dans OrdinateurJoueur.trouverChiffreSecret()");
 		//System.out.println("OrdinateurJoueur : " + this.getChiffreJoueur() + "," + this.getChiffreSecret());
 		
-		if (this.getChiffreJoueur() == 0) {
+		if (this.getChiffreJoueur() == "") {
 			this.setIA();
 		}
 		

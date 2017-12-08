@@ -28,7 +28,7 @@ public class NombreLongueurException extends Exception{
 	 *
 	 * @since 0.4.1
 	 */
-	public NombreLongueurException (int cNombre) {
+	public NombreLongueurException (String cNombre) {
 		super("Nombre saisi de longueur incorrect : " + cNombre + "\n");
 	}
 }

@@ -18,7 +18,7 @@ public class RechercheIA implements IA {
 	 *
 	 * @since 0.3
 	 */
-	private int lastChiffre;
+	private String lastChiffre;
 	
 	/**
 	 * <b>Cet objet représente la configuration du jeu.</b>
@@ -40,7 +40,7 @@ public class RechercheIA implements IA {
 	 *
 	 * @since 0.3
 	 */
-	public int getLastChiffre() {
+	public String getLastChiffre() {
 		return lastChiffre;
 	}
 	
@@ -53,7 +53,7 @@ public class RechercheIA implements IA {
 	 * 
 	 * @since 0.3 
 	 */
-	public void setLastChiffre(int pChiffre) {
+	public void setLastChiffre(String pChiffre) {
 		lastChiffre = pChiffre;
 	}
 	
@@ -64,14 +64,14 @@ public class RechercheIA implements IA {
 	 *
 	 * @since 0.3
 	 */
-	public int trouverChiffreSecret(String pResultat) {
+	public String trouverChiffreSecret(String pResultat) {
 		int nombreChiffre = configuration.getChiffre();
 		String resultat = pResultat;
 		//System.out.println(pResultat + "," + this.lastChiffre);
 		
 		int solution = 0;
 		int unite;
-		int lastProposition = this.getLastChiffre();
+		int lastProposition = Integer.parseInt(this.getLastChiffre());
 		
 		if (pResultat == null) { //Premiere evaluation - resultat pas encore initié
 			for (int i = 0; i < nombreChiffre ; i++) {
@@ -107,10 +107,10 @@ public class RechercheIA implements IA {
 			}
 		}
 
-		this.setLastChiffre(solution);
+		this.setLastChiffre("" + solution);
 		//System.out.println(solution + "," + this.lastChiffre);
 		//System.out.println(solution);
 		
-		return solution;
+		return  ("" + solution);
 	}
 }

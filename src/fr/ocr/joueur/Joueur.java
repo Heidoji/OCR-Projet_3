@@ -22,7 +22,7 @@ public interface Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public int getChiffreSecret();
+	public String getChiffreSecret();
 	
 	/**
 	 * <b>Retourne le nombre choisi pour decouvrir le Nombre secret.</b> 
@@ -34,7 +34,7 @@ public interface Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public int getChiffreJoueur();
+	public String getChiffreJoueur();
 	
 	/**
 	 * <b>Retourne le nombre de possibilité pour former la combinaison secrète dans le jeu Mastermind enregistrée dans le fichier de configuration.</b>
@@ -56,7 +56,7 @@ public interface Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public void setChiffreSecret(int pChiffreSecret);
+	public void setChiffreSecret(String pChiffreSecret);
 	
 	/**
 	 * <b>Met a jour le nombre choisi pour decouvrir le Nombre secret.</b>
@@ -69,7 +69,7 @@ public interface Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public void setChiffreJoueur(int pChiffreJoueur);
+	public void setChiffreJoueur(String pChiffreJoueur);
 	
 	/**
 	 * <b>Mise a jour de la valeur du nombre de couleur possible dans une combinaison de Mastermind</b>
@@ -85,24 +85,24 @@ public interface Joueur {
 	 * <b>Methode qui demande de choisir un chiffre secret</b>
 	 *
 	 * @see HumainJoueur#afficherTexte()
-	 * @see HumainJoueur#setChiffreSecret(int)
-	 * @see HumainJoueur#verifierNombre(int)
+	 * @see HumainJoueur#setChiffreSecret(String)
+	 * @see HumainJoueur#verifierNombre(String)
 	 * @see HumainJoueur#getChiffreSecret()
-	 * @see OrdinateurJoueur#setChiffreSecret(int)
+	 * @see OrdinateurJoueur#setChiffreSecret(String)
 	 * @see OrdinateurJoueur#getChiffreSecret()
 	 * 
 	 * @return Le nombre Secret choisi
 	 * 
 	 * @since 0.2
 	 */
-	public int choisirChiffreSecret();
+	public String choisirChiffreSecret();
 	
 	/**
 	 * <b>Methode qui donne un nombre pour decouvrir le nombre secret</b>
 	 *
-	 * @see HumainJoueur#setChiffreJoueur(int)
+	 * @see HumainJoueur#setChiffreJoueur(String)
 	 * @see HumainJoueur#getChiffreSecret()
-	 * @see OrdinateurJoueur#setChiffreJoueur(int)
+	 * @see OrdinateurJoueur#setChiffreJoueur(String)
 	 * @see OrdinateurJoueur#getChiffreSecret()
 	 * 
 	 * @param pResultat
@@ -112,5 +112,5 @@ public interface Joueur {
 	 * 
 	 * @since 0.2
 	 */
-	public int trouverChiffreSecret(String pResultat);
+	public String trouverChiffreSecret(String pResultat);
 }

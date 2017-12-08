@@ -153,8 +153,10 @@ public abstract class Mode {
 		logger.info("Entering Constructeur Empty Mode");
 		
 		this.player1 = new HumainJoueur();
+		this.player1.setChiffreJoueur("");
 		this.player1.setCouleur(configuration.getCouleur());
 		this.player2 = new OrdinateurJoueur();
+		this.player2.setChiffreJoueur("");
 		
 		this.essai = configuration.getEssai();
 		this.modDev = configuration.getModDev();
@@ -247,9 +249,9 @@ public abstract class Mode {
 	 * @see Joueur#choisirChiffreSecret()
 	 * @see Joueur#getChiffreSecret()
 	 * @see Joueur#getChiffreJoueur()
-	 * @see Jeu#getGagne(int, int)
+	 * @see Jeu#getGagne(String, String)
 	 * @see Jeu#getNbEssai()
-	 * @see Jeu#getComparer(int, int)
+	 * @see Jeu#getComparer(String, String)
 	 * @see Jeu#getGagner()
 	 *
 	 * @since 0.2
@@ -261,7 +263,7 @@ public abstract class Mode {
 		if (this.getModDev()) {
 			this.commentDev();
 		}
-		
+			
 		while (!(this.jeu.getGagne(this.player2.getChiffreJoueur(), this.player1.getChiffreSecret()) 
 				|| this.jeu.getNbEssai() >= this.essai)) {
 			logger.info("Nouveau passage dans la boucle de découverte du chiffre");

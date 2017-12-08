@@ -110,6 +110,12 @@ Pour le Mastermind :
 
 ### Version 0.4.1
 * DONE : Mise à jour de la Javadoc
+
+### Version 0.4.2
 * DONE : Génération de la Javadoc
+
+### Version 0.5
+* DONE : Implémentation de l'IA Mastermind
+* DONE : Changement de Int à String des variables ChiffreSecret et ChiffreJoueur 
 
 ---

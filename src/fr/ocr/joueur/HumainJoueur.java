@@ -41,7 +41,7 @@ public class HumainJoueur implements Joueur {
 	 * </p>
 	 * 
 	 * @see HumainJoueur#afficherTexte()
-	 * @see HumainJoueur#verifierNombre(int)
+	 * @see HumainJoueur#verifierNombre(String)
 	 *
 	 * @since 0.2
 	*/
@@ -54,11 +54,11 @@ public class HumainJoueur implements Joueur {
 	 * </p>
 	 * 
 	 * @see HumainJoueur#getChiffreSecret()
-	 * @see HumainJoueur#setChiffreSecret(int)
+	 * @see HumainJoueur#setChiffreSecret(String)
 	 *
 	 * @since 0.2
 	*/
-	private int chiffreSecret;
+	private String chiffreSecret;
 	
 	/**
      * <b>Variable contenant le chiffreJoueur du joueur Humain.</b>
@@ -67,11 +67,11 @@ public class HumainJoueur implements Joueur {
 	 * </p>
 	 * 
 	 * @see HumainJoueur#getChiffreJoueur()
-	 * @see HumainJoueur#setChiffreJoueur(int)
+	 * @see HumainJoueur#setChiffreJoueur(String)
 	 *
 	 * @since 0.2
 	*/
-	private int chiffreJoueur;
+	private String chiffreJoueur;
 	
 	/**
 	 * <b>Variable contenant le nombre de couleur possible pour former la combinaison secrète
@@ -102,7 +102,7 @@ public class HumainJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public int getChiffreSecret() {
+	public String getChiffreSecret() {
 		return this.chiffreSecret;
 	}
 	
@@ -115,7 +115,7 @@ public class HumainJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public int getChiffreJoueur() {
+	public String getChiffreJoueur() {
 		return this.chiffreJoueur;
 	}
 	
@@ -142,7 +142,7 @@ public class HumainJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public void setChiffreSecret(int pChiffreSecret) {
+	public void setChiffreSecret(String pChiffreSecret) {
 		this.chiffreSecret = pChiffreSecret;
 	}
 	
@@ -156,7 +156,7 @@ public class HumainJoueur implements Joueur {
 	 *
 	 * @since 0.2
 	 */
-	public void setChiffreJoueur(int pChiffreJoueur) {
+	public void setChiffreJoueur(String pChiffreJoueur) {
 		this.chiffreJoueur = pChiffreJoueur;
 	}
 	
@@ -183,13 +183,13 @@ public class HumainJoueur implements Joueur {
 	 * <b>Methode qui demande au joueur Humain de rentrer un chiffre secret</b>
 	 *
 	 * @see HumainJoueur#afficherTexte()
-	 * @see HumainJoueur#setChiffreSecret(int)
-	 * @see HumainJoueur#verifierNombre(int)
+	 * @see HumainJoueur#setChiffreSecret(String)
+	 * @see HumainJoueur#verifierNombre(String)
 	 * @see HumainJoueur#getChiffreSecret()
 	 * 
 	 * @since 0.2
 	 */
-	public int choisirChiffreSecret() {
+	public String choisirChiffreSecret() {
 		logger.info("Entre dans HumainJoueur.choisirChiffreSecret()");
 		Scanner sc = new Scanner(System.in);
 		boolean checkedNumber = false;
@@ -197,7 +197,7 @@ public class HumainJoueur implements Joueur {
 		do {
 			this.afficherTexte();
 			System.out.println("Choississez votre chiffre Secret : ");
-			this.setChiffreSecret(Integer.parseInt(sc.nextLine()));
+			this.setChiffreSecret(sc.nextLine());
 			try {
 				checkedNumber = this.verifierNombre(this.getChiffreSecret());
 			}
@@ -215,13 +215,13 @@ public class HumainJoueur implements Joueur {
 	/**
 	 * <b>Methode qui demande au joueur Humain de rentrer un nombre pour decouvrir le nombre secret</b>
 	 *
-	 * @see HumainJoueur#setChiffreJoueur(int)
-	 * @see HumainJoueur#verifierNombre(int)
+	 * @see HumainJoueur#setChiffreJoueur(String)
+	 * @see HumainJoueur#verifierNombre(String)
 	 * @see HumainJoueur#getChiffreSecret()
 	 * 
 	 * @since 0.2
 	 */
-	public int trouverChiffreSecret(String pResultat) {
+	public String trouverChiffreSecret(String pResultat) {
 		logger.info("Entre dans HumainJoueur.trouverChiffreSecret()");
 		boolean checkedNumber = false;
 		Scanner sc = new Scanner(System.in);
@@ -229,7 +229,7 @@ public class HumainJoueur implements Joueur {
 		do {
 			this.afficherTexte();
 			System.out.println("Proposez un chiffre : ");
-			this.setChiffreJoueur(Integer.parseInt(sc.nextLine()));
+			this.setChiffreJoueur(sc.nextLine());
 			
 			try {
 				checkedNumber = this.verifierNombre(this.getChiffreJoueur());
@@ -303,11 +303,12 @@ public class HumainJoueur implements Joueur {
 	 * 
 	 * @version 0.2
 	 */
-	private boolean verifierNombre(int cNombre) throws NombreNegatifException, NombreLongueurException, NombreEchelleException {
+	private boolean verifierNombre(String cNombre) throws NombreNegatifException, NombreLongueurException, NombreEchelleException {
 	    boolean checkedNumber = true;
-		logger.info("Verification du nombre rentre");		
+		logger.info("Verification du nombre rentre");	
+		int nombre = Integer.parseInt(cNombre);
 		{
-			if (cNombre < 0) {
+			if (nombre < 0) {
 				logger.error("Nombre saisi négatif : " + cNombre);
 				checkedNumber = false;
 				throw new NombreNegatifException(cNombre);
