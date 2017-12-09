@@ -60,14 +60,20 @@ Pour le Mastermind :
 
 ## Compilation et lancement
 
+### Sous Windows
+
+Double cliquez sur OCR_3-Project.bat pour lancer le jeu.
+Pour lancer le monde developpeur, Double cliquez sur OCR_3-Project - Dev.bat 
+
+### Sous Linux
+
+Dans le terminal, allez à la racine du dossier et écrivez :
+java -jar OCR-Projet_3.jar false pour le mode normal
+java -jar OCR-Projet_3.jar true pour le mode developpeur
+
 ---
 
-
-
-
 ## Log
-
-
 
 ### Version 0.0.1
 
@@ -117,5 +123,11 @@ Pour le Mastermind :
 ### Version 0.5
 * DONE : Implémentation de l'IA Mastermind
 * DONE : Changement de Int à String des variables ChiffreSecret et ChiffreJoueur 
+
+### Version 0.5.1
+* DONE : Mise à jour de la Javadoc
+
+### Version 1.0
+* DONE : Création de l'executable
 
 ---
