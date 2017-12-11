@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import fr.ocr.jeu.Lanceur;
 
+
 /**
  * <b>Main est la classe lance le jeu en créant le lanceur du jeu</b>
  * 
@@ -24,9 +25,11 @@ public class Main {
 	private static final Logger logger = LogManager.getLogger(Main.class);
 	
 	public static void main(String[] args) {
+		int modDev;
 		logger.info("Entering application");
 		
-		Lanceur lanceur = new Lanceur();
+		modDev = Integer.parseInt(args[0]);
+		Lanceur lanceur = new Lanceur(modDev);
 		lanceur.lancerJeu();
 		
 		logger.info("Exiting application");

@@ -153,10 +153,10 @@ public abstract class Mode {
 		logger.info("Entering Constructeur Empty Mode");
 		
 		this.player1 = new HumainJoueur();
-		this.player1.setChiffreJoueur("");
+		this.player1.setChiffreJoueur("null");
 		this.player1.setCouleur(configuration.getCouleur());
 		this.player2 = new OrdinateurJoueur();
-		this.player2.setChiffreJoueur("");
+		this.player2.setChiffreJoueur("null");
 		
 		this.essai = configuration.getEssai();
 		this.modDev = configuration.getModDev();
@@ -266,8 +266,10 @@ public abstract class Mode {
 			
 		while (!(this.jeu.getGagne(this.player2.getChiffreJoueur(), this.player1.getChiffreSecret()) 
 				|| this.jeu.getNbEssai() >= this.essai)) {
-			logger.info("Nouveau passage dans la boucle de découverte du chiffre");
 			this.jeu.setNbEssai();
+			System.out.println("");
+			System.out.println("Il vous reste " + (10 - this.jeu.getNbEssai()) + " essai" + (((10 - this.jeu.getNbEssai()) < 2) ? "" : "s"));
+			logger.info("Nouveau passage dans la boucle de découverte du chiffre");
 			this.setResultat(this.jeu.getComparer(this.player2.trouverChiffreSecret(this.getResultat()), this.player1.getChiffreSecret()));
 		}
 		
@@ -278,6 +280,7 @@ public abstract class Mode {
 		else {
 			logger.info("Jeu perdu");
 			System.out.println("Vous avez perdu");
+			System.out.println("Le nombre secret est : " + this.player1.getChiffreSecret());
 		}
 			
 	}
@@ -301,11 +304,11 @@ public abstract class Mode {
 		System.out.println("Mode Developpeur activé");
 		System.out.println("-----------------------");
 		System.out.println("");
-		System.out.println("Le chiffre secret est " + this.player1.getChiffreSecret());
-		System.out.println("Le chiffre secret est " + this.player2.getChiffreSecret());
+		System.out.println("Le chiffre secret du joueur 1 est " + this.player1.getChiffreSecret());
+		System.out.println("Le chiffre secret du joueur 2 est " + this.player2.getChiffreSecret());
 		System.out.println("");
-		System.out.println("Le chiffre joueur est " + this.player1.getChiffreJoueur());
-		System.out.println("Le chiffre joueur est " + this.player2.getChiffreJoueur());
+		System.out.println("Le chiffre joueur du joueur 1 est " + this.player1.getChiffreJoueur());
+		System.out.println("Le chiffre joueur du joueur 2 est " + this.player2.getChiffreJoueur());
 		System.out.println("");
 	}
 }

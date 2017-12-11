@@ -1,9 +1,5 @@
 package fr.ocr.joueur;
 
-import fr.ocr.exceptions.NombreEchelleException;
-import fr.ocr.exceptions.NombreLongueurException;
-import fr.ocr.exceptions.NombreNegatifException;
-
 /**
  * <b>Interface gerant les joueurs</b>
  * 

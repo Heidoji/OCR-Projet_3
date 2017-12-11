@@ -269,7 +269,6 @@ public class HumainJoueur implements Joueur {
 		System.out.println("");
 		System.out.println("Le nombre doit comporter " + configuration.getChiffre() + " chiffres");
 		System.out.println("Les chiffres autorisées sont : 0 à " + (this.getCouleur() - 1));
-		System.out.println("Vous avez " + configuration.getEssai() + " essais");
 		System.out.println("");
 	}
 	
@@ -324,7 +323,7 @@ public class HumainJoueur implements Joueur {
 			for (int i = 0; i < configuration.getChiffre(); i++) {
 				String carac = "" + stringNombre.charAt(i);
 				int chiffre = Integer.parseInt(carac);
-				if (chiffre > this.getCouleur()) {
+				if (chiffre > (this.getCouleur()-1)) {
 					checkedNumber = false;
 					logger.error("Chiffre utilisé incorrect (hors échelle) : " + cNombre);
 					throw new NombreEchelleException(cNombre);

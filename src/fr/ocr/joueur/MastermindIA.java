@@ -129,7 +129,6 @@ public class MastermindIA implements IA {
 	 * @since 0.4.1
 	 */
 	public String trouverChiffreSecret(String pResultat) {
-		System.out.println(pResultat);
 		
 		if (!init) { 
 			logger.info("CLASSE MASTERMINDIA : initialisation de l'IA");
@@ -205,6 +204,7 @@ public class MastermindIA implements IA {
      */
     public String comparerChiffre(String pChiffre1, String pChiffre2) {
 		String chiffre1Nettoyé = "";
+		String chiffre2Nettoyé = "";
 		
 		int bienPlace = 0;
 		int present = 0;
@@ -214,17 +214,14 @@ public class MastermindIA implements IA {
             	bienPlace++;
             if (chiffre1Nettoyé.indexOf(pChiffre1.charAt(i)) < 0)
             	chiffre1Nettoyé += pChiffre1.charAt(i);
+            if (chiffre2Nettoyé.indexOf(pChiffre2.charAt(i)) < 0)
+            	chiffre2Nettoyé += pChiffre2.charAt(i);
         }
 		
-		for (int i = 0; i < pChiffre2.length(); i++) {
-            if (chiffre1Nettoyé.indexOf(pChiffre1.charAt(i)) >= 0)
+		for (int i = 0; i < chiffre2Nettoyé.length(); i++) {
+            if (chiffre1Nettoyé.indexOf(chiffre2Nettoyé.charAt(i)) >= 0)
             	present++;
         }
-
-		if (present - bienPlace < 0) 
-			present = 0;
-		else
-			present -= bienPlace;
 		
 		return (bienPlace + "" + present);
 	}
@@ -246,6 +243,7 @@ public class MastermindIA implements IA {
 
         // Enleve les proposition n'ayant pas le même resultat
         for(int i = 0; i < this.combinaisons.size(); i++) {
+        	//System.out.println(this.combinaisons.get(i));
             if (!pResultat.equals(comparerChiffre(this.combinaisons.get(i), this.getLastChiffre()))) {
                 this.combinaisons.remove(i);
             }

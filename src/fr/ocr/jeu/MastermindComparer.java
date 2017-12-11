@@ -49,6 +49,7 @@ public class MastermindComparer implements Comparer {
 		logger.info("CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur");
 		String str = "";
 		String chiffreJoueurNettoyé = "";
+		String chiffreSecretNettoyé = "";
 		
 		int bienPlace = 0;
 		int present = 0;
@@ -58,17 +59,14 @@ public class MastermindComparer implements Comparer {
             	bienPlace++;
             if (chiffreJoueurNettoyé.indexOf(pChiffreJoueur.charAt(i)) < 0)
             	chiffreJoueurNettoyé += pChiffreJoueur.charAt(i);
+            if (chiffreSecretNettoyé.indexOf(pChiffreSecret.charAt(i)) < 0)
+            	chiffreSecretNettoyé += pChiffreSecret.charAt(i);
         }
 		
-		for (int i = 0; i < pChiffreSecret.length(); i++) {
-            if (chiffreJoueurNettoyé.indexOf(pChiffreJoueur.charAt(i)) >= 0)
+		for (int i = 0; i < chiffreSecretNettoyé.length(); i++) {
+            if (chiffreJoueurNettoyé.indexOf(chiffreSecretNettoyé.charAt(i)) >= 0)
             	present++;
         }
-
-		if (present - bienPlace < 0) 
-			present = 0;
-		else
-			present -= bienPlace;
 		
 		if (present > 0)
 			str += (present-bienPlace) + " présent" + (present > 1 ? "s" : "") + (bienPlace > 0 ? ", " : "");

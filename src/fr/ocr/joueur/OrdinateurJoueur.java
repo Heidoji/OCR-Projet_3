@@ -241,16 +241,13 @@ public class OrdinateurJoueur implements Joueur {
 	
 	/**
 	 * <b>Methode calculant une solution et retourne un nombre pour decouvrir le nombre secret</b>
-	 *
-	 * TO BE DONE 
 	 * 
 	 * @since 0.4.1
 	 */
 	public String trouverChiffreSecret(String pResultat) {
 		logger.info("Entre dans OrdinateurJoueur.trouverChiffreSecret()");
-		//System.out.println("OrdinateurJoueur : " + this.getChiffreJoueur() + "," + this.getChiffreSecret());
 		
-		if (this.getChiffreJoueur() == "") {
+		if (this.getChiffreJoueur() == "null") {
 			this.setIA();
 		}
 		

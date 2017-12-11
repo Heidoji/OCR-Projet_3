@@ -130,4 +130,7 @@ java -jar OCR-Projet_3.jar true pour le mode developpeur
 ### Version 1.0
 * DONE : Création de l'executable
 
+### Version 1.0.1
+* BUG : Problème d'initialisation de l'IA
+
 ---

@@ -1,8 +1,5 @@
 package fr.ocr.jeu;
 
-import fr.ocr.configuration.Configuration;
-import fr.ocr.joueur.HumainJoueur;
-import fr.ocr.joueur.OrdinateurJoueur;
 import fr.ocr.mode.Mode;
 
 /**

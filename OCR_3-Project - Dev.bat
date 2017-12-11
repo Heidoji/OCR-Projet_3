@@ -1,4 +1,4 @@
 REM Mode developpeur
-java -jar OCR-Projet_3.jar true
+java -jar OCR-Projet3.jar 1
 REM Mode Normal
-REM java -jar OCR-Projet_3.jar false
+REM java -jar OCR-Projet3.jar 0

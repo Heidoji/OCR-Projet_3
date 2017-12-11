@@ -113,17 +113,22 @@ public class Lanceur {
 	 *
 	 * @since 0.2
 	 */
-	public Lanceur() {
+	public Lanceur(int cModDev) {
 		logger.info("Entering Constructeur Lanceur");
 		
 		Path source = Paths.get("config.properties");
 		if (Files.exists(source)) {
 			logger.info("File config.properties exists");
 			this.configuration = new Configuration();
+			if (cModDev == 1) {
+				this.configuration.setModDev(true);
+				}
+			else
+				this.configuration.setModDev(false);
 		}
 		else {
 			logger.info("Create a new config.properties files");
-			this.configuration = new Configuration('R', 'C', 4, 10, 4, false);
+			this.configuration = new Configuration('R', 'C', 4, 10, 4, true);
 		}
 	}
 	

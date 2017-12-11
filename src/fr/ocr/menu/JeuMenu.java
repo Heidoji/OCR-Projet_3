@@ -100,6 +100,7 @@ public class JeuMenu implements Menu {
 	public void afficherMenu() {
 		logger.info("Entre dans l'afficherMenu du jeu");
 		
+		System.out.print("");
 		System.out.println(" *********************************************************");
 		System.out.println(" *                                                       *");
 		System.out.println(" * **** **** ****   **** **** **** **** **** ****   **** *");

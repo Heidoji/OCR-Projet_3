@@ -71,7 +71,7 @@ public class RechercheIA implements IA {
 		
 		int solution = 0;
 		int unite;
-		int lastProposition = Integer.parseInt(this.getLastChiffre());
+		int lastProposition;
 		
 		if (pResultat == null) { //Premiere evaluation - resultat pas encore initié
 			for (int i = 0; i < nombreChiffre ; i++) {
@@ -79,6 +79,7 @@ public class RechercheIA implements IA {
 			}
 		}
 		else {
+			lastProposition = Integer.parseInt(this.getLastChiffre());
 			for (int i = nombreChiffre - 1; i >= 0 ; i--) {
 				unite = lastProposition % 10;
 				int newDigit;
