@@ -68,8 +68,8 @@ Pour lancer le monde developpeur, Double cliquez sur OCR_3-Project - Dev.bat
 ### Sous Linux
 
 Dans le terminal, allez à la racine du dossier et écrivez :
-java -jar OCR-Projet_3.jar false pour le mode normal
-java -jar OCR-Projet_3.jar true pour le mode developpeur
+java -jar OCR-Projet_3.jar 0 pour le mode normal
+java -jar OCR-Projet_3.jar 1 pour le mode developpeur
 
 ---
 
@@ -136,5 +136,8 @@ java -jar OCR-Projet_3.jar true pour le mode developpeur
 ### Version 1.0.2
 * DONE : Amélioration de MastermindComparer
 * DONE : Correction Orthographique
+
+### Version 1.0.3
+* DONE : Correction de la méthode de compilation dans le README
 
 ---
