@@ -49,27 +49,30 @@ public class MastermindComparer implements Comparer {
 		logger.info("CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur");
 		String str = "";
 		String chiffreJoueurNettoyé = "";
-		String chiffreSecretNettoyé = "";
 		
 		int bienPlace = 0;
 		int present = 0;
-		
-		for (int i = 0; i < pChiffreSecret.length(); i++) {
-            if (pChiffreJoueur.charAt(i) == pChiffreSecret.charAt(i))
+		int presentUnique = 0;
+
+		for (int i = 0; i < pChiffreJoueur.length(); i++) {
+			if (pChiffreJoueur.charAt(i) == pChiffreSecret.charAt(i)) {
             	bienPlace++;
-            if (chiffreJoueurNettoyé.indexOf(pChiffreJoueur.charAt(i)) < 0)
-            	chiffreJoueurNettoyé += pChiffreJoueur.charAt(i);
-            if (chiffreSecretNettoyé.indexOf(pChiffreSecret.charAt(i)) < 0)
-            	chiffreSecretNettoyé += pChiffreSecret.charAt(i);
-        }
-		
-		for (int i = 0; i < chiffreSecretNettoyé.length(); i++) {
-            if (chiffreJoueurNettoyé.indexOf(chiffreSecretNettoyé.charAt(i)) >= 0)
-            	present++;
-        }
+				continue;
+			}
+			for (int j = 0; j < pChiffreSecret.length(); j++) {
+				presentUnique = 0;
+				if ((pChiffreJoueur.charAt(i) == pChiffreSecret.charAt(j)) &&
+						(chiffreJoueurNettoyé.indexOf(pChiffreSecret.charAt(j)) < 0) && (pChiffreJoueur.charAt(j) != pChiffreSecret.charAt(j))) {
+					chiffreJoueurNettoyé += "" + pChiffreSecret.charAt(j);
+					presentUnique = 1;
+				}
+				present += presentUnique;
+			}
+			
+		}
 		
 		if (present > 0)
-			str += (present-bienPlace) + " présent" + (present > 1 ? "s" : "") + (bienPlace > 0 ? ", " : "");
+			str += (present) + " présent" + (present > 1 ? "s" : "") + (bienPlace > 0 ? ", " : "");
 		
 		if (bienPlace > 0)
 			str += bienPlace + " bien placé" + (bienPlace > 1 ? "s" : "");

@@ -1,223 +1,85 @@
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.main.Main - Entering application
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.jeu.Lanceur - Entering Constructeur Lanceur
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.jeu.Lanceur - File config.properties exists
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Lecture du fichier de configuration
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration lu
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans la class lancerJeu
-2017-12-11 10:27:36.286 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:36.302 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:36.302 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:36.302 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:36.302 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
-2017-12-11 10:27:36.302 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
-2017-12-11 10:27:43.396 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : L
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.jeu.Lanceur - Lancement du jeu
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.jeu.Lanceur - Initialisation du jeu
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:43.396 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans setMode de la class Lanceur
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.mode.Mode - Entering Constructeur Empty Mode
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:43.411 [main] DEBUG fr.ocr.jeu.Lanceur - Mode choisi : U
-2017-12-11 10:27:43.411 [main] DEBUG fr.ocr.jeu.Lanceur - Mode instancie class fr.ocr.mode.DuelMode
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.mode.Mode - Debut de la sequence de jeu en DualMode
-2017-12-11 10:27:43.411 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.choisirChiffreSecret()
-2017-12-11 10:27:50.247 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:27:50.247 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:27:50.247 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Secret choisi par le joueur : 1236
-2017-12-11 10:27:50.247 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.choisirChiffreSecret()
-2017-12-11 10:27:50.247 [main] DEBUG fr.ocr.joueur.OrdinateurJoueur - Chiffre Secret choisi par l'ordinateur : 7560
-2017-12-11 10:27:50.247 [main] INFO  fr.ocr.mode.Mode - Mode developpeur active
-2017-12-11 10:27:50.247 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:27:57.373 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:27:57.373 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:27:57.373 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 5555
-2017-12-11 10:27:57.388 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:27:57.388 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:27:57.388 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:27:57.388 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:27:57.388 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:27:57.388 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:29:41.665 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:29:41.665 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:29:41.665 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 7573
-2017-12-11 10:29:41.680 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:29:41.680 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:29:49.665 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:29:49.665 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:29:49.665 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 7562
-2017-12-11 10:29:49.665 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:29:49.665 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:29:56.368 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:29:56.368 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:29:56.368 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 7561
-2017-12-11 10:29:56.384 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:29:56.384 [main] INFO  fr.ocr.mode.Mode - Jeu gagne par joueur 2 en DualMode
-2017-12-11 10:29:56.384 [main] INFO  fr.ocr.mode.Mode - Jeu perdu par joueur 1 en DualMode
-2017-12-11 10:29:56.384 [main] INFO  fr.ocr.menu.FinMenu - Entre dans choisirMenu de fin de partie
-2017-12-11 10:29:56.400 [main] INFO  fr.ocr.menu.FinMenu - Entre dans choisirMenu de fin de partie
-2017-12-11 10:30:15.165 [main] DEBUG fr.ocr.menu.FinMenu - Configuration du jeu choisi dans le menu de fin de partie : R
-2017-12-11 10:30:15.165 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:30:15.165 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:30:15.165 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:30:15.165 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:30:15.165 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
-2017-12-11 10:30:15.181 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
-2017-12-11 10:30:17.540 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Lecture du fichier de configuration
-2017-12-11 10:30:17.540 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration lu
-2017-12-11 10:30:17.540 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : M
-2017-12-11 10:30:17.540 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
-2017-12-11 10:30:17.556 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
-2017-12-11 10:30:35.416 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : L
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.jeu.Lanceur - Lancement du jeu
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.jeu.Lanceur - Initialisation du jeu
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans setMode de la class Lanceur
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.mode.Mode - Entering Constructeur Empty Mode
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:30:35.416 [main] DEBUG fr.ocr.jeu.Lanceur - Mode choisi : U
-2017-12-11 10:30:35.416 [main] DEBUG fr.ocr.jeu.Lanceur - Mode instancie class fr.ocr.mode.DuelMode
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.mode.Mode - Debut de la sequence de jeu en DualMode
-2017-12-11 10:30:35.416 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.choisirChiffreSecret()
-2017-12-11 10:30:40.182 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:30:40.182 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:30:40.182 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Secret choisi par le joueur : 0000
-2017-12-11 10:30:40.182 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.choisirChiffreSecret()
-2017-12-11 10:30:40.182 [main] DEBUG fr.ocr.joueur.OrdinateurJoueur - Chiffre Secret choisi par l'ordinateur : 7510
-2017-12-11 10:30:40.182 [main] INFO  fr.ocr.mode.Mode - Mode developpeur active
-2017-12-11 10:30:40.197 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:31:18.667 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 0000
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : initialisation de l'IA
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:31:18.667 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:31:22.151 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:31:22.151 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:31:22.151 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 7510
-2017-12-11 10:31:22.151 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:31:22.167 [main] INFO  fr.ocr.mode.Mode - Jeu gagne par joueur 1 en DualMode
-2017-12-11 10:31:22.167 [main] INFO  fr.ocr.mode.Mode - Jeu perdu par joueur 2 en DualMode
-2017-12-11 10:31:22.167 [main] INFO  fr.ocr.menu.FinMenu - Entre dans choisirMenu de fin de partie
-2017-12-11 10:31:22.167 [main] INFO  fr.ocr.menu.FinMenu - Entre dans choisirMenu de fin de partie
-2017-12-11 10:31:33.714 [main] DEBUG fr.ocr.menu.FinMenu - Configuration du jeu choisi dans le menu de fin de partie : R
-2017-12-11 10:31:33.714 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:31:33.714 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:31:33.714 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:31:33.714 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:31:33.714 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
-2017-12-11 10:31:33.730 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
-2017-12-11 10:31:38.558 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : O
-2017-12-11 10:31:38.558 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:31:38.558 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:31:38.558 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:31:38.558 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:31:38.558 [main] INFO  fr.ocr.menu.ConfigMenu - Entre dans choisirMenu du menu de configuration
-2017-12-11 10:31:38.574 [main] INFO  fr.ocr.menu.ConfigMenu - Entre dans choisirMenu du menu de configuration
-2017-12-11 10:31:44.496 [main] INFO  fr.ocr.menu.ConfigMenu - Entre dans choisirValeur du menu de configuration
-2017-12-11 10:31:46.856 [main] DEBUG fr.ocr.menu.ConfigMenu - Valeur choisi pour O est 4
-2017-12-11 10:31:46.856 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Lecture du fichier de configuration
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration lu
-2017-12-11 10:31:46.871 [main] DEBUG fr.ocr.menu.ConfigMenu - Configuration du jeu choisi dans le menu de configuration : O
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.menu.ConfigMenu - Entre dans choisirMenu du menu de configuration
-2017-12-11 10:31:46.871 [main] INFO  fr.ocr.menu.ConfigMenu - Entre dans choisirMenu du menu de configuration
-2017-12-11 10:31:51.747 [main] DEBUG fr.ocr.menu.ConfigMenu - Configuration du jeu choisi dans le menu de configuration : R
-2017-12-11 10:31:51.747 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:31:51.747 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:31:51.747 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:31:51.747 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:31:51.747 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
-2017-12-11 10:31:51.762 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
-2017-12-11 10:32:42.295 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : L
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.jeu.Lanceur - Lancement du jeu
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.jeu.Lanceur - Initialisation du jeu
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans setMode de la class Lanceur
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.mode.Mode - Entering Constructeur Empty Mode
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:32:42.295 [main] DEBUG fr.ocr.jeu.Lanceur - Mode choisi : U
-2017-12-11 10:32:42.295 [main] DEBUG fr.ocr.jeu.Lanceur - Mode instancie class fr.ocr.mode.DuelMode
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.mode.Mode - Debut de la sequence de jeu en DualMode
-2017-12-11 10:32:42.295 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.choisirChiffreSecret()
-2017-12-11 10:32:45.185 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:32:45.185 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:32:45.185 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Secret choisi par le joueur : 0000
-2017-12-11 10:32:45.185 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.choisirChiffreSecret()
-2017-12-11 10:32:45.185 [main] DEBUG fr.ocr.joueur.OrdinateurJoueur - Chiffre Secret choisi par l'ordinateur : 1332
-2017-12-11 10:32:45.185 [main] INFO  fr.ocr.mode.Mode - Mode developpeur active
-2017-12-11 10:32:45.185 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:32:57.592 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 1000
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : initialisation de l'IA
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:32:57.592 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
-2017-12-11 10:34:33.610 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
-2017-12-11 10:34:33.610 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
-2017-12-11 10:34:33.610 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Joueur choisi par le joueur : 0000
-2017-12-11 10:34:33.610 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:34:33.610 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
-2017-12-11 10:34:33.626 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
-2017-12-11 10:34:33.626 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
-2017-12-11 10:34:33.626 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.trouverChiffreSecret()
+2017-12-11 22:49:16.261 [main] INFO  fr.ocr.main.Main - Entering application
+2017-12-11 22:49:16.264 [main] INFO  fr.ocr.jeu.Lanceur - Entering Constructeur Lanceur
+2017-12-11 22:49:16.266 [main] INFO  fr.ocr.jeu.Lanceur - File config.properties exists
+2017-12-11 22:49:16.267 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:16.267 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:16.267 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:16.268 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:16.268 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Lecture du fichier de configuration
+2017-12-11 22:49:16.320 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration lu
+2017-12-11 22:49:16.320 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans la class lancerJeu
+2017-12-11 22:49:16.322 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:16.323 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:16.323 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:16.324 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:16.324 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
+2017-12-11 22:49:16.349 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
+2017-12-11 22:49:24.333 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Lecture du fichier de configuration
+2017-12-11 22:49:24.337 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration lu
+2017-12-11 22:49:24.337 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : D
+2017-12-11 22:49:24.338 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans l'afficherMenu du jeu
+2017-12-11 22:49:24.353 [main] INFO  fr.ocr.menu.JeuMenu - Entre dans choisirMenu du jeu
+2017-12-11 22:49:25.478 [main] DEBUG fr.ocr.menu.JeuMenu - Configuration du jeu choisi dans le menu jeu : L
+2017-12-11 22:49:25.478 [main] INFO  fr.ocr.jeu.Lanceur - Lancement du jeu
+2017-12-11 22:49:25.478 [main] INFO  fr.ocr.jeu.Lanceur - Initialisation du jeu
+2017-12-11 22:49:25.478 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:25.479 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:25.479 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:25.479 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:25.479 [main] INFO  fr.ocr.jeu.Lanceur - Entre dans setMode de la class Lanceur
+2017-12-11 22:49:25.479 [main] INFO  fr.ocr.jeu.Lanceur - Mode intancie en DefenseMode
+2017-12-11 22:49:25.480 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:25.480 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:25.480 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:25.480 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:25.480 [main] INFO  fr.ocr.mode.Mode - Entering Constructeur Empty Mode
+2017-12-11 22:49:25.481 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:25.482 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:25.482 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:25.482 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:25.482 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:25.483 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:25.483 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:25.483 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:25.483 [main] DEBUG fr.ocr.jeu.Lanceur - Mode choisi : D
+2017-12-11 22:49:25.484 [main] DEBUG fr.ocr.jeu.Lanceur - Mode instancie class fr.ocr.mode.DefenseMode
+2017-12-11 22:49:25.484 [main] INFO  fr.ocr.mode.Mode - Debut de la sequence de jeu
+2017-12-11 22:49:25.484 [main] INFO  fr.ocr.joueur.HumainJoueur - Entre dans HumainJoueur.choisirChiffreSecret()
+2017-12-11 22:49:27.704 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification du nombre rentre
+2017-12-11 22:49:27.704 [main] INFO  fr.ocr.joueur.HumainJoueur - Verification faite et correcte
+2017-12-11 22:49:27.704 [main] DEBUG fr.ocr.joueur.HumainJoueur - Chiffre Secret choisi par le joueur : 0000
+2017-12-11 22:49:27.705 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.706 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.706 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Entering Constructeur Empty Configuration
+2017-12-11 22:49:27.707 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Sauvegarde du fichier de configuration
+2017-12-11 22:49:27.707 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Fichier de configuration sauvegardé
+2017-12-11 22:49:27.707 [main] INFO  fr.ocr.configuration.Configuration - CLASS CONFIGURATION : Saved File Read
+2017-12-11 22:49:27.707 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : initialisation de l'IA
+2017-12-11 22:49:27.708 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.709 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.709 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.709 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
+2017-12-11 22:49:27.710 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.711 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.711 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.711 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
+2017-12-11 22:49:27.712 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.714 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.715 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.715 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
+2017-12-11 22:49:27.715 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.716 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.717 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.718 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
+2017-12-11 22:49:27.718 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.719 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.719 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.720 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
+2017-12-11 22:49:27.720 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.721 [main] INFO  fr.ocr.mode.Mode - Nouveau passage dans la boucle de découverte du chiffre
+2017-12-11 22:49:27.721 [main] INFO  fr.ocr.joueur.OrdinateurJoueur - Entre dans OrdinateurJoueur.trouverChiffreSecret()
+2017-12-11 22:49:27.721 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDIA : Nettoyage de la liste des possibilités
+2017-12-11 22:49:27.721 [main] INFO  fr.ocr.mode.Mode - CLASSE MASTERMINDCOMPARER : comparaison entre le nombre secret et le nombre joueur
+2017-12-11 22:49:27.723 [main] INFO  fr.ocr.mode.Mode - Jeu gagne
+2017-12-11 22:49:27.726 [main] INFO  fr.ocr.menu.FinMenu - Entre dans choisirMenu de fin de partie
+2017-12-11 22:49:27.732 [main] INFO  fr.ocr.menu.FinMenu - Entre dans choisirMenu de fin de partie

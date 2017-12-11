@@ -190,7 +190,7 @@ public abstract class Jeu {
 		System.out.println("*           VICTOIRE             *");
 		System.out.println("**********************************");
 		System.out.println("");
-		System.out.println("Vous avez gagner en " + this.getNbEssai() + " coups");
+		System.out.println("Vous avez gagné en " + this.getNbEssai() + " coup" + (this.getNbEssai() < 2 ? "" : "s"));
 		System.out.println("");
 	}
 }

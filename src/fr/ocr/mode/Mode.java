@@ -267,7 +267,7 @@ public abstract class Mode {
 		while (!(this.jeu.getGagne(this.player2.getChiffreJoueur(), this.player1.getChiffreSecret()) 
 				|| this.jeu.getNbEssai() >= this.essai)) {
 			this.jeu.setNbEssai();
-			System.out.println("");
+			System.out.println("--------------------------------------");
 			System.out.println("Il vous reste " + (10 - this.jeu.getNbEssai()) + " essai" + (((10 - this.jeu.getNbEssai()) < 2) ? "" : "s"));
 			logger.info("Nouveau passage dans la boucle de découverte du chiffre");
 			this.setResultat(this.jeu.getComparer(this.player2.trouverChiffreSecret(this.getResultat()), this.player1.getChiffreSecret()));
@@ -279,6 +279,7 @@ public abstract class Mode {
 		}
 		else {
 			logger.info("Jeu perdu");
+			System.out.println("--------------------------------------");
 			System.out.println("Vous avez perdu");
 			System.out.println("Le nombre secret est : " + this.player1.getChiffreSecret());
 		}

@@ -133,4 +133,8 @@ java -jar OCR-Projet_3.jar true pour le mode developpeur
 ### Version 1.0.1
 * BUG : Problème d'initialisation de l'IA
 
+### Version 1.0.2
+* DONE : Amélioration de MastermindComparer
+* DONE : Correction Orthographique
+
 ---

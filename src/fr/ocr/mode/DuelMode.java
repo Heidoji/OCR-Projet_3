@@ -60,7 +60,7 @@ public class DuelMode extends Mode {
 			
 		do {
 			this.jeu.setNbEssai();
-			System.out.println("");
+			System.out.println("--------------------------------------");
 			System.out.println("Joueur 1 : Il vous reste " + (10 - this.jeu.getNbEssai()) + " essai" + (((10 - this.jeu.getNbEssai()) < 2) ? "" : "s"));
 			this.jeu.getComparer(this.player1.trouverChiffreSecret(this.getResultat()), this.player2.getChiffreSecret());
 			if (jeu.getGagne(this.player1.getChiffreJoueur(), this.player2.getChiffreSecret())) {
@@ -68,26 +68,26 @@ public class DuelMode extends Mode {
 				this.jeu.getGagner();
 				this.afficheJoueur(2);
 				System.out.println("");
-				System.out.println("Joueur 2 : Vous avez perdu");
+				System.out.println("Vous avez perdu");
 				System.out.println("Le nombre secret est : " + this.player1.getChiffreSecret());
-				System.out.println("");
+				System.out.println("--------------------------------------");
 				logger.info("Jeu gagne par joueur 1 en DualMode");
 				logger.info("Jeu perdu par joueur 2 en DualMode");
 				break;
 			}
 				
 			this.afficheJoueur(2);			
-			System.out.println("");
+			System.out.println("--------------------------------------");
 			System.out.println("Joueur 2 : Il vous reste " + (10 - this.jeu.getNbEssai()) + " essai" + (((10 - this.jeu.getNbEssai()) < 2) ? "" : "s"));
 			this.setResultat(this.jeu.getComparer(this.player2.trouverChiffreSecret(this.getResultat()), this.player1.getChiffreSecret()));
 			if (jeu.getGagne(this.player2.getChiffreJoueur(), this.player1.getChiffreSecret())) {
 				this.afficheJoueur(1);
 				System.out.println("");
-				System.out.println("Joueur 1 : Vous avez perdu");
+				System.out.println("Vous avez perdu");
 				System.out.println("Le nombre secret est : " + this.player2.getChiffreSecret());
 				this.afficheJoueur(2);
 				this.jeu.getGagner();
-				System.out.println("");
+				System.out.println("--------------------------------------");
 				logger.info("Jeu gagne par joueur 2 en DualMode");
 				logger.info("Jeu perdu par joueur 1 en DualMode");
 				break;

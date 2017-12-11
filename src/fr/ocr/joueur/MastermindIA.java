@@ -203,25 +203,37 @@ public class MastermindIA implements IA {
      * @version 0.5
      */
     public String comparerChiffre(String pChiffre1, String pChiffre2) {
-		String chiffre1Nettoyé = "";
-		String chiffre2Nettoyé = "";
+    	String chiffre1Nettoyé = "";
 		
 		int bienPlace = 0;
 		int present = 0;
-		
-		for (int i = 0; i < pChiffre2.length(); i++) {
-            if (pChiffre1.charAt(i) == pChiffre2.charAt(i))
+		int presentUnique = 0;
+
+		for (int i = 0; i < pChiffre1.length(); i++) {
+			//System.out.println("---------------------------------------------");
+			//System.out.println("pChiffre1.charAt(i) : " + pChiffre1.charAt(i));
+			//System.out.println("pChiffre2.charAt(i) : " + pChiffre2.charAt(i));
+			if (pChiffre1.charAt(i) == pChiffre2.charAt(i)) {
             	bienPlace++;
-            if (chiffre1Nettoyé.indexOf(pChiffre1.charAt(i)) < 0)
-            	chiffre1Nettoyé += pChiffre1.charAt(i);
-            if (chiffre2Nettoyé.indexOf(pChiffre2.charAt(i)) < 0)
-            	chiffre2Nettoyé += pChiffre2.charAt(i);
-        }
-		
-		for (int i = 0; i < chiffre2Nettoyé.length(); i++) {
-            if (chiffre1Nettoyé.indexOf(chiffre2Nettoyé.charAt(i)) >= 0)
-            	present++;
-        }
+				//System.out.println("bienPlace : " + bienPlace);
+				continue;
+			}
+			for (int j = 0; j < pChiffre2.length(); j++) {
+				presentUnique = 0;
+				//System.out.println("pChiffre2.charAt(j) : " + pChiffre2.charAt(j));
+				if ((pChiffre1.charAt(i) == pChiffre2.charAt(j)) &&
+						(chiffre1Nettoyé.indexOf(pChiffre2.charAt(j)) < 0) && (pChiffre1.charAt(j) != pChiffre2.charAt(j))) {
+					//System.out.println("pChiffre1.charAt(i) == pChiffre2.charAt(j) : " + (pChiffre1.charAt(i) == pChiffre2.charAt(j)));
+					//System.out.println("chiffre1Nettoyé.indexOf(pChiffre2.charAt(j)) < 0 : " + (chiffre1Nettoyé.indexOf(pChiffre2.charAt(j)) < 0));
+					//System.out.println("chiffre1Nettoyé : " + chiffre1Nettoyé);
+					chiffre1Nettoyé += "" + pChiffre2.charAt(j);
+					presentUnique = 1;
+				}
+				present += presentUnique;
+				//System.out.println("present : " + present);	
+			}
+			
+		}
 		
 		return (bienPlace + "" + present);
 	}
