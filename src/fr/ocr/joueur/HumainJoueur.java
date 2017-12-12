@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import fr.ocr.configuration.Configuration;
+import fr.ocr.exceptions.NoChiffreException;
 import fr.ocr.exceptions.NombreEchelleException;
 import fr.ocr.exceptions.NombreLongueurException;
 import fr.ocr.exceptions.NombreNegatifException;
@@ -201,7 +202,7 @@ public class HumainJoueur implements Joueur {
 			try {
 				checkedNumber = this.verifierNombre(this.getChiffreSecret());
 			}
-			catch (NombreNegatifException | NombreLongueurException | NombreEchelleException e) {
+			catch (NombreNegatifException | NombreLongueurException | NombreEchelleException | NoChiffreException e) {
 				System.out.println(e.getMessage());	
 			}
 			
@@ -234,7 +235,7 @@ public class HumainJoueur implements Joueur {
 			try {
 				checkedNumber = this.verifierNombre(this.getChiffreJoueur());
 			}
-			catch (NombreNegatifException | NombreLongueurException | NombreEchelleException e2) {
+			catch (NombreNegatifException | NombreLongueurException | NombreEchelleException | NoChiffreException e2) {
 				System.out.println(e2.getMessage());	
 			}
 			
@@ -302,10 +303,21 @@ public class HumainJoueur implements Joueur {
 	 * 
 	 * @version 0.2
 	 */
-	private boolean verifierNombre(String cNombre) throws NombreNegatifException, NombreLongueurException, NombreEchelleException {
+	private boolean verifierNombre(String cNombre) throws NombreNegatifException, NombreLongueurException, NombreEchelleException, NoChiffreException {
 	    boolean checkedNumber = true;
 		logger.info("Verification du nombre rentre");	
+		
+		for (int i = 0; i < configuration.getChiffre(); i++) {
+			int chiffre = (int) cNombre.charAt(i);;
+			if (chiffre < 48 || chiffre > 57) {
+				checkedNumber = false;
+				logger.error("Caractère utilisé non autorisé : " + cNombre);
+				throw new NoChiffreException(cNombre);
+			}
+		}
+		
 		int nombre = Integer.parseInt(cNombre);
+
 		{
 			if (nombre < 0) {
 				logger.error("Nombre saisi négatif : " + cNombre);

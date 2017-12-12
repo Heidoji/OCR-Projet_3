@@ -140,4 +140,7 @@ java -jar OCR-Projet_3.jar 1 pour le mode developpeur
 ### Version 1.0.3
 * DONE : Correction de la méthode de compilation dans le README
 
+### Version 1.0.4
+* BUG : Exception pour l'entrée d'un caractère non numérique
+
 ---
